@@ -91,7 +91,7 @@ document.addEventListener("click", (e) => {
   if (champ) {
     champ.textContent = hWins > mWins ? "Haiden 🏆"
       : mWins > hWins ? "Mario 🏆"
-      : "Dead heat 🤝";
+      : (hWins === 0 ? "Not started yet" : "Dead heat 🤝");
   }
 })();
 

@@ -5,7 +5,7 @@
       "group": "Cold Water Sport Fish",
       "sci": "Oncorhynchus clarkii utah",
       "where": "Weber & Provo Rivers, Bonneville Basin tributaries",
-      "caught": true
+      "caught": false
     },
     {
       "name": "Bear Lake Cutthroat",
@@ -33,18 +33,14 @@
       "group": "Cold Water Sport Fish",
       "sci": "Oncorhynchus mykiss",
       "where": "Provo River, Strawberry, Scofield Reservoir",
-      "caught": true,
-      "by": "Mario",
-      "date": "May 30, 2026"
+      "caught": false
     },
     {
       "name": "Brook Trout",
       "group": "Cold Water Sport Fish",
       "sci": "Salvelinus fontinalis",
       "where": "High-elevation mountain streams & lakes",
-      "caught": true,
-      "by": "Haiden",
-      "date": "May 30, 2026"
+      "caught": false
     },
     {
       "name": "Tiger Trout",
@@ -72,9 +68,7 @@
       "group": "Cold Water Sport Fish",
       "sci": "Salmo trutta",
       "where": "Provo, Weber & Green Rivers",
-      "caught": true,
-      "by": "Mario",
-      "date": "April 25, 2026"
+      "caught": false
     },
     {
       "name": "Arctic Grayling",
@@ -116,18 +110,14 @@
       "group": "Warm Water Sport Fish",
       "sci": "Micropterus salmoides",
       "where": "Utah Lake, Sand Hollow, Lake Powell",
-      "caught": true,
-      "by": "Haiden",
-      "date": "April 2, 2026"
+      "caught": false
     },
     {
       "name": "Smallmouth Bass",
       "group": "Warm Water Sport Fish",
       "sci": "Micropterus dolomieu",
       "where": "Lake Powell, Jordanelle, Flaming Gorge",
-      "caught": true,
-      "by": "Mario",
-      "date": "May 12, 2026"
+      "caught": false
     },
     {
       "name": "Wiper",

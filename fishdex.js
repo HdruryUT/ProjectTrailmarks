@@ -6,7 +6,7 @@
 
    To show a real photo in a caught fish's slot, drop the image in
    assets/dex/ and add a  photo  field, e.g.:
-       caught: true, by: "Mario", date: "May 30, 2026",
+       caught: false,
        photo: "assets/dex/rainbow-trout.jpg"
    The page, category bars, and grand total all update automatically.
    =================================================================== */
@@ -17,12 +17,12 @@ const FISH_OF_UTAH = [
   { group: "Cold Water Sport Fish", name: "Bear Lake Cutthroat", sci: "Oncorhynchus clarkii utah", where: "Bear Lake (Utah/Idaho border)", caught: false },
   { group: "Cold Water Sport Fish", name: "Colorado Cutthroat", sci: "Oncorhynchus clarkii pleuriticus", where: "Boulder Mountain Lakes, Green River drainage", caught: false },
   { group: "Cold Water Sport Fish", name: "Yellowstone Cutthroat", sci: "Oncorhynchus clarkii bouvieri", where: "Snake River headwaters, northern Utah", caught: false },
-  { group: "Cold Water Sport Fish", name: "Rainbow Trout", sci: "Oncorhynchus mykiss", where: "Provo River, Strawberry, Scofield Reservoir", caught: true, by: "Mario", date: "May 30, 2026" },
-  { group: "Cold Water Sport Fish", name: "Brook Trout", sci: "Salvelinus fontinalis", where: "High-elevation mountain streams & lakes", caught: true, by: "Haiden", date: "May 30, 2026" },
+  { group: "Cold Water Sport Fish", name: "Rainbow Trout", sci: "Oncorhynchus mykiss", where: "Provo River, Strawberry, Scofield Reservoir", caught: false },
+  { group: "Cold Water Sport Fish", name: "Brook Trout", sci: "Salvelinus fontinalis", where: "High-elevation mountain streams & lakes", caught: false },
   { group: "Cold Water Sport Fish", name: "Tiger Trout", sci: "Salmo trutta × Salvelinus fontinalis", where: "Scofield, Palisade, Miller Flat", caught: false },
   { group: "Cold Water Sport Fish", name: "Splake", sci: "Salvelinus namaycush × S. fontinalis", where: "Fish Lake, Joe's Valley, Miller Flat", caught: false },
   { group: "Cold Water Sport Fish", name: "Lake Trout", sci: "Salvelinus namaycush", where: "Flaming Gorge, Fish Lake, Bear Lake", caught: false },
-  { group: "Cold Water Sport Fish", name: "Brown Trout", sci: "Salmo trutta", where: "Provo, Weber & Green Rivers", caught: true, by: "Mario", date: "April 25, 2026" },
+  { group: "Cold Water Sport Fish", name: "Brown Trout", sci: "Salmo trutta", where: "Provo, Weber & Green Rivers", caught: false },
   { group: "Cold Water Sport Fish", name: "Arctic Grayling", sci: "Thymallus arcticus", where: "High Uinta Mountain lakes & streams", caught: false },
   { group: "Cold Water Sport Fish", name: "Mountain Whitefish", sci: "Prosopium williamsoni", where: "Provo, Weber & Logan Rivers", caught: false },
   { group: "Cold Water Sport Fish", name: "Bonneville Whitefish", sci: "Prosopium williamsoni", where: "Endemic to Bear Lake", caught: false },
@@ -30,8 +30,8 @@ const FISH_OF_UTAH = [
   { group: "Cold Water Sport Fish", name: "Golden Trout", sci: "Oncorhynchus mykiss aguabonita", where: "Uinta Mountains, Echo Lake, Atwood Creek", caught: false },
 
   // ---- Warm Water Sport Fish ----
-  { group: "Warm Water Sport Fish", name: "Largemouth Bass", sci: "Micropterus salmoides", where: "Utah Lake, Sand Hollow, Lake Powell", caught: true, by: "Haiden", date: "April 2, 2026" },
-  { group: "Warm Water Sport Fish", name: "Smallmouth Bass", sci: "Micropterus dolomieu", where: "Lake Powell, Jordanelle, Flaming Gorge", caught: true, by: "Mario", date: "May 12, 2026" },
+  { group: "Warm Water Sport Fish", name: "Largemouth Bass", sci: "Micropterus salmoides", where: "Utah Lake, Sand Hollow, Lake Powell", caught: false },
+  { group: "Warm Water Sport Fish", name: "Smallmouth Bass", sci: "Micropterus dolomieu", where: "Lake Powell, Jordanelle, Flaming Gorge", caught: false },
   { group: "Warm Water Sport Fish", name: "Wiper", sci: "Morone saxatilis × M. chrysops", where: "Mona, Newcastle, DMAD Reservoir", caught: false },
   { group: "Warm Water Sport Fish", name: "Striped Bass", sci: "Morone saxatilis", where: "Lake Powell, Sand Hollow Reservoir", caught: false },
   { group: "Warm Water Sport Fish", name: "White Bass", sci: "Morone chrysops", where: "Utah Lake, DMAD, Gunnison Bend", caught: false },
