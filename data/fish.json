@@ -5,40 +5,28 @@
       "group": "Cold Water Sport Fish",
       "sci": "Oncorhynchus clarkii utah",
       "where": "Weber & Provo Rivers, Bonneville Basin tributaries",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": true
     },
     {
       "name": "Bear Lake Cutthroat",
       "group": "Cold Water Sport Fish",
       "sci": "Oncorhynchus clarkii utah",
       "where": "Bear Lake (Utah/Idaho border)",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Colorado Cutthroat",
       "group": "Cold Water Sport Fish",
       "sci": "Oncorhynchus clarkii pleuriticus",
       "where": "Boulder Mountain Lakes, Green River drainage",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Yellowstone Cutthroat",
       "group": "Cold Water Sport Fish",
       "sci": "Oncorhynchus clarkii bouvieri",
       "where": "Snake River headwaters, northern Utah",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Rainbow Trout",
@@ -47,8 +35,7 @@
       "where": "Provo River, Strawberry, Scofield Reservoir",
       "caught": true,
       "by": "Mario",
-      "date": "May 30, 2026",
-      "photo": ""
+      "date": "May 30, 2026"
     },
     {
       "name": "Brook Trout",
@@ -57,38 +44,28 @@
       "where": "High-elevation mountain streams & lakes",
       "caught": true,
       "by": "Haiden",
-      "date": "May 30, 2026",
-      "photo": ""
+      "date": "May 30, 2026"
     },
     {
       "name": "Tiger Trout",
       "group": "Cold Water Sport Fish",
       "sci": "Salmo trutta × Salvelinus fontinalis",
       "where": "Scofield, Palisade, Miller Flat",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Splake",
       "group": "Cold Water Sport Fish",
       "sci": "Salvelinus namaycush × S. fontinalis",
       "where": "Fish Lake, Joe's Valley, Miller Flat",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Lake Trout",
       "group": "Cold Water Sport Fish",
       "sci": "Salvelinus namaycush",
       "where": "Flaming Gorge, Fish Lake, Bear Lake",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Brown Trout",
@@ -97,58 +74,42 @@
       "where": "Provo, Weber & Green Rivers",
       "caught": true,
       "by": "Mario",
-      "date": "April 25, 2026",
-      "photo": ""
+      "date": "April 25, 2026"
     },
     {
       "name": "Arctic Grayling",
       "group": "Cold Water Sport Fish",
       "sci": "Thymallus arcticus",
       "where": "High Uinta Mountain lakes & streams",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Mountain Whitefish",
       "group": "Cold Water Sport Fish",
       "sci": "Prosopium williamsoni",
       "where": "Provo, Weber & Logan Rivers",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Bonneville Whitefish",
       "group": "Cold Water Sport Fish",
       "sci": "Prosopium williamsoni",
       "where": "Endemic to Bear Lake",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Kokanee Salmon",
       "group": "Cold Water Sport Fish",
       "sci": "Oncorhynchus nerka",
       "where": "Strawberry, Flaming Gorge, Fish Lake",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Golden Trout",
       "group": "Cold Water Sport Fish",
       "sci": "Oncorhynchus mykiss aguabonita",
       "where": "Uinta Mountains, Echo Lake, Atwood Creek",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Largemouth Bass",
@@ -157,8 +118,7 @@
       "where": "Utah Lake, Sand Hollow, Lake Powell",
       "caught": true,
       "by": "Haiden",
-      "date": "April 2, 2026",
-      "photo": ""
+      "date": "April 2, 2026"
     },
     {
       "name": "Smallmouth Bass",
@@ -167,288 +127,203 @@
       "where": "Lake Powell, Jordanelle, Flaming Gorge",
       "caught": true,
       "by": "Mario",
-      "date": "May 12, 2026",
-      "photo": ""
+      "date": "May 12, 2026"
     },
     {
       "name": "Wiper",
       "group": "Warm Water Sport Fish",
       "sci": "Morone saxatilis × M. chrysops",
       "where": "Mona, Newcastle, DMAD Reservoir",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Striped Bass",
       "group": "Warm Water Sport Fish",
       "sci": "Morone saxatilis",
       "where": "Lake Powell, Sand Hollow Reservoir",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "White Bass",
       "group": "Warm Water Sport Fish",
       "sci": "Morone chrysops",
       "where": "Utah Lake, DMAD, Gunnison Bend",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Northern Pike",
       "group": "Warm Water Sport Fish",
       "sci": "Esox lucius",
       "where": "Yuba Reservoir, Utah Lake, Redmond",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Tiger Muskie",
       "group": "Warm Water Sport Fish",
       "sci": "Esox masquinongy × E. lucius",
       "where": "Pineview, Johnson, Joe's Valley",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Yellow Perch",
       "group": "Warm Water Sport Fish",
       "sci": "Perca flavescens",
       "where": "Rockport, Echo, Pineview Reservoir",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Walleye",
       "group": "Warm Water Sport Fish",
       "sci": "Sander vitreus",
       "where": "Utah Lake, Willard Bay, Lake Powell",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Bluegill",
       "group": "Sunfish & Crappie",
       "sci": "Lepomis macrochirus",
       "where": "Sand Hollow, Mantua, Utah Lake",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Green Sunfish",
       "group": "Sunfish & Crappie",
       "sci": "Lepomis cyanellus",
       "where": "Mantua, Utah Lake, community ponds",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Black Crappie",
       "group": "Sunfish & Crappie",
       "sci": "Pomoxis nigromaculatus",
       "where": "Pineview, Mantua, Utah Lake",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "White Crappie",
       "group": "Sunfish & Crappie",
       "sci": "Pomoxis annularis",
       "where": "DMAD, Starvation, Gunnison Bend",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Channel Catfish",
       "group": "Catfish, Suckers, Chubs & Carp",
       "sci": "Ictalurus punctatus",
       "where": "Utah Lake, Jordan River, Lake Powell",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Black Bullhead Catfish",
       "group": "Catfish, Suckers, Chubs & Carp",
       "sci": "Ameiurus melas",
       "where": "Utah Lake, Mantua, community ponds",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Bluehead Sucker",
       "group": "Catfish, Suckers, Chubs & Carp",
       "sci": "Catostomus discobolus",
       "where": "Colorado River tributaries in Utah",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Flannelmouth Sucker",
       "group": "Catfish, Suckers, Chubs & Carp",
       "sci": "Catostomus latipinnis",
       "where": "San Juan, Colorado River, Lake Powell",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "June Sucker",
       "group": "Catfish, Suckers, Chubs & Carp",
       "sci": "Chasmistes liorus",
       "where": "Endemic to Utah Lake & tributaries",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Razorback Sucker",
       "group": "Catfish, Suckers, Chubs & Carp",
       "sci": "Xyrauchen texanus",
       "where": "Colorado, Green, San Juan (endangered)",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Roundtail Chub",
       "group": "Catfish, Suckers, Chubs & Carp",
       "sci": "Gila robusta",
       "where": "Green & Colorado Rivers",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Humpback Chub",
       "group": "Catfish, Suckers, Chubs & Carp",
       "sci": "Gila cypha",
       "where": "Colorado & Green Rivers (endangered)",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Bonytail Chub",
       "group": "Catfish, Suckers, Chubs & Carp",
       "sci": "Gila elegans",
       "where": "Colorado & Green Rivers (endangered)",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Common Carp",
       "group": "Catfish, Suckers, Chubs & Carp",
       "sci": "Cyprinus carpio",
       "where": "Utah Lake, Lake Powell, Willard Bay & ponds",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Redside Shiner",
       "group": "Minnows & Small Fish",
       "sci": "Richardsonius balteatus",
       "where": "Streams & rivers across northern Utah",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Speckled Dace",
       "group": "Minnows & Small Fish",
       "sci": "Rhinichthys osculus",
       "where": "Small mountain streams statewide",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Western Mosquitofish",
       "group": "Minnows & Small Fish",
       "sci": "Gambusia affinis",
       "where": "Shallow ponds, marshes, slow streams",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Bonneville Cisco",
       "group": "Minnows & Small Fish",
       "sci": "Prosopium gemmifer",
       "where": "Endemic to Bear Lake",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Mottled Sculpin",
       "group": "Sculpin & Burbot",
       "sci": "Cottus bairdii",
       "where": "Cold mountain streams & spring creeks",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Bear Lake Sculpin",
       "group": "Sculpin & Burbot",
       "sci": "Cottus extensus",
       "where": "Endemic to Bear Lake",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     },
     {
       "name": "Burbot",
       "group": "Sculpin & Burbot",
       "sci": "Lota lota",
       "where": "Flaming Gorge Reservoir",
-      "caught": false,
-      "by": "",
-      "date": "",
-      "photo": ""
+      "caught": false
     }
   ]
 }
