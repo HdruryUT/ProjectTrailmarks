@@ -33,10 +33,10 @@ content:
                 - Sculpin & Burbot
           - { name: sci, label: Scientific name, type: string }
           - { name: where, label: Where found, type: string }
-          - { name: caught, label: "Caught?", type: boolean, default: false }
-          - { name: by, label: Caught by, type: string }
-          - { name: date, label: Date caught, type: string }
-          - { name: photo, label: Catch photo, type: image }
+          - { name: haiden, label: "Haiden caught?", type: boolean, default: false }
+          - { name: haidenPhoto, label: "Haiden's photo", type: image }
+          - { name: mario, label: "Mario caught?", type: boolean, default: false }
+          - { name: marioPhoto, label: "Mario's photo", type: image }
 
   - name: catchlog
     label: Catch Log — individual catches

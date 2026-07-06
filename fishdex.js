@@ -88,12 +88,18 @@ async function loadFish() {
   return FISH_OF_UTAH;
 }
 
-function renderDex(list) {
+let DEX_LIST = [];
+let DEX_PERSON = "haiden"; // "haiden" or "mario"
+
+const isCaught = (f, person) => person === "mario" ? !!f.mario : !!f.haiden;
+const photoOf  = (f, person) => person === "mario" ? (f.marioPhoto || "") : (f.haidenPhoto || "");
+
+function renderDex(list, person) {
   const root = document.getElementById("dex");
   if (!root) return;
 
   const total = list.length;
-  const caught = list.filter(f => f.caught).length;
+  const caught = list.filter(f => isCaught(f, person)).length;
   const pct = Math.round((caught / total) * 100);
 
   // progress bar
@@ -109,26 +115,24 @@ function renderDex(list) {
     g.fish.push(f);
   });
 
-  root.innerHTML = groups.map((g, gi) => {
-    const got = g.fish.filter(f => f.caught).length;
+  root.innerHTML = groups.map((g) => {
+    const got = g.fish.filter(f => isCaught(f, person)).length;
     const gpct = Math.round((got / g.fish.length) * 100);
     const done = got === g.fish.length;
     const cards = g.fish.map(f => {
-      const cls = f.caught ? "dex-card dex-card--caught" : "dex-card dex-card--locked";
-      const stamp = f.caught ? "✓ Caught" : "Locked";
-      // caught fish with a photo show the photo; otherwise the silhouette
-      const media = (f.caught && f.photo)
-        ? `<img class="dex-card__photo" src="${f.photo}" alt="${f.name} caught by ${f.by || ""}">`
+      const got1 = isCaught(f, person);
+      const photo = photoOf(f, person);
+      const cls = got1 ? "dex-card dex-card--caught" : "dex-card dex-card--locked";
+      const stamp = got1 ? "✓ Caught" : "Locked";
+      const media = (got1 && photo)
+        ? `<img class="dex-card__photo" src="${photo}" alt="${f.name}">`
         : `<div class="dex-card__fish">${FISH_SVG}</div>`;
-      const foot = f.caught && f.by
-        ? `<div class="dex-card__where"><b>${f.by}</b> · ${f.date}</div>`
-        : `<div class="dex-card__where">${f.where}</div>`;
       return `<div class="${cls}">
         <span class="dex-card__stamp">${stamp}</span>
         ${media}
         <div class="dex-card__name">${f.name}</div>
         <div class="dex-card__sci">${f.sci}</div>
-        ${foot}
+        <div class="dex-card__where">${f.where}</div>
       </div>`;
     }).join("");
     return `<div class="dex-group">
@@ -148,6 +152,18 @@ function renderDex(list) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const list = await loadFish();
-  renderDex(list);
+  DEX_LIST = await loadFish();
+  renderDex(DEX_LIST, DEX_PERSON);
+
+  // tab switching between Haiden's and Mario's dex
+  const tabs = document.querySelector(".dex-tabs");
+  if (tabs) {
+    tabs.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-person]");
+      if (!btn) return;
+      DEX_PERSON = btn.dataset.person;
+      tabs.querySelectorAll("[data-person]").forEach(b => b.classList.toggle("active", b === btn));
+      renderDex(DEX_LIST, DEX_PERSON);
+    });
+  }
 });

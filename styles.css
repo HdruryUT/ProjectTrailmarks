@@ -265,6 +265,17 @@ img { max-width: 100%; display: block; }
 .footer small { color: var(--stone); display: block; margin-top: 10px; }
 
 /* ---------- Catch Dex ---------- */
+.dex-tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+.dex-tab {
+  flex: 1; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 1px;
+  font-size: 0.95rem; padding: 12px 14px; border-radius: var(--radius);
+  border: 2px solid var(--forest); background: #fff; color: var(--forest); cursor: pointer;
+  transition: background .15s ease, color .15s ease;
+}
+.dex-tab:hover { background: var(--sand); }
+.dex-tab.active { background: var(--forest); color: var(--sand); }
+
+
 .dex-progress {
   background: var(--forest); color: var(--sand);
   border-radius: var(--radius); box-shadow: var(--shadow);
