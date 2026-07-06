@@ -34,7 +34,8 @@
       "sci": "Oncorhynchus mykiss",
       "where": "Strawberry Reservoir",
       "caught": true,
-      "by": "Powerboat"
+      "by": "Powerboat",
+      "photo": "assets/dex/gulo-photo Rainbow.jpg"
     },
     {
       "name": "Brook Trout",
@@ -49,7 +50,8 @@
       "sci": "Salmo trutta × Salvelinus fontinalis",
       "where": "Salem pond",
       "caught": true,
-      "by": "Worm"
+      "by": "Worm",
+      "photo": "assets/dex/gulo-photo tiger.jpg"
     },
     {
       "name": "Splake",
@@ -214,7 +216,8 @@
       "group": "Catfish, Suckers, Chubs & Carp",
       "sci": "Ameiurus melas",
       "where": "Utah Lake",
-      "caught": true
+      "caught": true,
+      "photo": "assets/dex/gulo-photo catfish.jpg"
     },
     {
       "name": "Bluehead Sucker",
@@ -271,7 +274,8 @@
       "sci": "Cyprinus carpio",
       "where": "Utah Lake",
       "caught": true,
-      "by": "Shrimp"
+      "by": "Shrimp",
+      "photo": "assets/dex/gulo-photo carp.jpg"
     },
     {
       "name": "Redside Shiner",
