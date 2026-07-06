@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trailmarks — Haiden & Mario's Outdoor Adventures</title>
+  <title>Gulo — Haiden & Mario's Outdoor Adventures</title>
   <meta name="description" content="Hiking and fishing adventures from Haiden and Mario. Trip logs, photos, and catches from the trail and the water." />
 
   <!-- Favicon (browser tab icon) -->
@@ -13,7 +13,7 @@
        Once your site is live, replace the URLs below with your real address, e.g.
        https://YOURUSERNAME.github.io/REPONAME/  and add assets/social-card.jpg -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Trailmarks — Haiden & Mario's Outdoor Adventures" />
+  <meta property="og:title" content="Gulo — Haiden & Mario's Outdoor Adventures" />
   <meta property="og:description" content="Hiking, fishing, photos, and a catch log from two friends who'd rather be outside." />
   <meta property="og:image" content="assets/social-card.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -28,7 +28,7 @@
   <!-- NAV -->
   <header class="nav">
     <div class="container nav__inner">
-      <a class="nav__brand" href="index.html"><img class="nav__logo" src="assets/logo-cream.png" alt="Trailmarks wolf logo" />TRAIL<span>MARKS</span></a>
+      <a class="nav__brand" href="index.html"><img class="nav__lockup" src="assets/logo-lockup.png" alt="Gulo" /></a>
       <button class="nav__toggle" aria-label="Menu">&#9776;</button>
       <nav>
         <ul class="nav__links">
@@ -36,6 +36,7 @@
           <li><a href="adventures.html">Adventures</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="catches.html">Catch Log</a></li>
+          <li><a href="catchdex.html">Catch Dex</a></li>
         </ul>
       </nav>
     </div>
@@ -44,10 +45,10 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <img class="hero__logo" src="assets/logo-cream.png" alt="Trailmarks wolf logo" />
-      <p class="eyebrow">Hiking &bull; Fishing &bull; Good times outside</p>
+      <img class="hero__crest" src="assets/crest.png" alt="Gulo crest — wolverine emblem" />
+      <p class="eyebrow">Good times outside</p>
       <h1>Two friends. <br>One endless trail.</h1>
-      <p>Welcome to Trailmarks — where Haiden and Mario log the hikes we climb, the fish we (sometimes) catch, and every muddy, sunburnt story in between.</p>
+      <p>Welcome to Gulo — where Haiden and Mario log the hikes we climb, the fish we (sometimes) catch, and every muddy, sunburnt story in between.</p>
       <div class="hero__cta">
         <a class="btn btn--primary" href="adventures.html">Read our adventures</a>
         <a class="btn btn--ghost" href="gallery.html">See the photos</a>
@@ -82,6 +83,58 @@
           <p>The angler of the duo. Knows every good fishing hole within a hundred miles and swears the big one is always just one more cast away.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- SEASON STANDINGS (rivalry) -->
+  <!-- Edit the data-h / data-m numbers to update the rivalry. Winner is highlighted automatically. -->
+  <section class="section section--tight container">
+    <p class="eyebrow">The rivalry</p>
+    <h2>Season Standings</h2>
+    <p class="lead">Haiden vs Mario, 2026 season. Bragging rights on the line.</p>
+    <div class="standings">
+      <div class="standings__champ"><span>Current Gulo Champion</span><b id="champName">—</b></div>
+
+      <div class="standings__row" data-h="3" data-m="3">
+        <div class="standings__side"><span class="standings__val">3</span><span class="standings__name">Haiden</span></div>
+        <div class="standings__cat">Fish Landed</div>
+        <div class="standings__side standings__side--r"><span class="standings__name">Mario</span><span class="standings__val">3</span></div>
+      </div>
+
+      <div class="standings__row" data-h="4.1" data-m="2.6">
+        <div class="standings__side"><span class="standings__val">4.1 lb</span><span class="standings__name">Haiden</span></div>
+        <div class="standings__cat">Biggest Bass</div>
+        <div class="standings__side standings__side--r"><span class="standings__name">Mario</span><span class="standings__val">2.6 lb</span></div>
+      </div>
+
+      <div class="standings__row" data-h="2" data-m="3">
+        <div class="standings__side"><span class="standings__val">2</span><span class="standings__name">Haiden</span></div>
+        <div class="standings__cat">Dex Species</div>
+        <div class="standings__side standings__side--r"><span class="standings__name">Mario</span><span class="standings__val">3</span></div>
+      </div>
+
+      <div class="standings__row" data-h="72" data-m="54">
+        <div class="standings__side"><span class="standings__val">72 mi</span><span class="standings__name">Haiden</span></div>
+        <div class="standings__cat">Trail Miles</div>
+        <div class="standings__side standings__side--r"><span class="standings__name">Mario</span><span class="standings__val">54 mi</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TROPHY CASE -->
+  <section class="section section--tight container">
+    <p class="eyebrow">Achievements</p>
+    <h2>Trophy Case</h2>
+    <p class="lead">Badges earned on the trail and the water. Grey ones are still up for grabs.</p>
+    <div class="trophies">
+      <div class="trophy"><div class="trophy__icon">🥾</div><div class="trophy__name">First Summit</div><div class="trophy__desc">Tagged Granite Peak, 3,900 ft</div></div>
+      <div class="trophy"><div class="trophy__icon">🎣</div><div class="trophy__name">First Cast</div><div class="trophy__desc">Logged the season's first catch</div></div>
+      <div class="trophy"><div class="trophy__icon">🌅</div><div class="trophy__name">Dawn Patrol</div><div class="trophy__desc">On the trail before sunrise</div></div>
+      <div class="trophy"><div class="trophy__icon">🐟</div><div class="trophy__name">Bass Master</div><div class="trophy__desc">Landed a 4 lb+ bass</div></div>
+      <div class="trophy trophy--locked"><div class="trophy__icon">🏔️</div><div class="trophy__name">Peak Bagger</div><div class="trophy__desc">Summit 10 different peaks</div></div>
+      <div class="trophy trophy--locked"><div class="trophy__icon">📏</div><div class="trophy__name">20-Inch Club</div><div class="trophy__desc">Catch a 20 in+ fish</div></div>
+      <div class="trophy trophy--locked"><div class="trophy__icon">🎯</div><div class="trophy__name">Dex Complete</div><div class="trophy__desc">Catch all 45 Utah species</div></div>
+      <div class="trophy trophy--locked"><div class="trophy__icon">💦</div><div class="trophy__name">Skunked</div><div class="trophy__desc">Come home with zero fish</div></div>
     </div>
   </section>
 
@@ -124,7 +177,7 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <div class="footer__brand">TRAIL<span>MARKS</span></div>
+      <div class="footer__brand">GULO</div>
       <p>Made by two friends who'd rather be outside.</p>
       <small>&copy; <span data-year></span> Haiden &amp; Mario</small>
     </div>

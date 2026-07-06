@@ -1,4 +1,4 @@
-# Trailmarks 🏔️🎣
+# Gulo 🏔️🎣
 
 Haiden & Mario's outdoor adventures site — hiking, fishing, photos, and a catch log.
 Built with plain HTML, CSS, and JavaScript. No build tools, no setup.
@@ -34,6 +34,14 @@ Built with plain HTML, CSS, and JavaScript. No build tools, no setup.
 - Text lives right in the `.html` files — change the trip titles, dates, and descriptions to your real adventures.
 - Update the numbers in the stats strip on `index.html`.
 - Add new catches by copying a `<div class="catch">…</div>` block in `catches.html`.
+
+## The fun stuff (game features)
+- **Catch Dex** (`catchdex.html` + `fishdex.js`): all 45 fish species in Utah. Caught species light up; the rest are locked silhouettes. **Each category completes on its own** (its own progress bar) plus a grand-total bar up top. **To mark a fish caught**, open `fishdex.js` and change that fish's `caught: false` to `caught: true` (optionally add `by` and `date`). The full illustrated **Fish of Utah poster** is linked at the top of the page (`assets/fish-of-utah.jpg`).
+  - **Catch photos:** each caught fish can show a real photo. Drop the image in `assets/dex/` and add a `photo: "assets/dex/your-file.jpg"` field to that fish in `fishdex.js`.
+- **Season Standings** (home page): Haiden-vs-Mario rivalry across categories. Edit the `data-h` / `data-m` numbers on each row in `index.html` — the winner and the "Gulo Champion" are highlighted automatically.
+- **Trophy Case** (home page): achievement badges. Move a badge from locked to earned by removing `trophy--locked` from its `<div>` in `index.html`.
+- **Live fishing conditions** (Catch Log): real-time weather via the free Open-Meteo API (no key). Change `LAT`/`LON` in the script at the bottom of `catches.html` to your home water.
+- **Upgraded trip map** (Adventures): green pins = hikes, orange = fishing, a dashed line traces the season's route, and each pin links down to its trip. Edit the `trips` list in `adventures.html`.
 
 ## Extra features
 - **Trip map** (Adventures page): edit the `trips` list near the bottom of `adventures.html` — each pin is `[latitude, longitude, "Name", "hike" or "fish"]`. Get coordinates by right-clicking a spot in Google Maps.

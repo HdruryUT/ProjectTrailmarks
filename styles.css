@@ -1,5 +1,5 @@
 /* ===================================================================
-   Trailmarks — shared styles
+   Gulo — shared styles
    Rugged / earthy outdoors theme for Haiden & Mario
    =================================================================== */
 
@@ -103,6 +103,7 @@ img { max-width: 100%; display: block; }
   display: flex; align-items: center; gap: 10px;
 }
 .nav__logo { height: 42px; width: auto; display: block; }
+.nav__lockup { height: 40px; width: auto; display: block; }
 .nav__brand span { color: var(--clay); }
 .nav__links {
   display: flex; gap: 8px; list-style: none; margin: 0; padding: 0;
@@ -132,6 +133,7 @@ img { max-width: 100%; display: block; }
   text-align: center;
 }
 .hero__logo { height: 160px; width: auto; margin: 0 auto 6px; display: block; filter: drop-shadow(0 6px 14px rgba(0,0,0,0.35)); }
+.hero__crest { height: 260px; width: auto; margin: 0 auto 14px; display: block; filter: drop-shadow(0 8px 18px rgba(0,0,0,0.4)); }
 .hero h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); text-transform: uppercase; }
 .hero p { font-size: 1.2rem; max-width: 55ch; margin: 0 auto 28px; }
 .hero__cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
@@ -260,11 +262,128 @@ img { max-width: 100%; display: block; }
 .footer__brand span { color: var(--clay); }
 .footer small { color: var(--stone); display: block; margin-top: 10px; }
 
+/* ---------- Catch Dex ---------- */
+.dex-progress {
+  background: var(--forest); color: var(--sand);
+  border-radius: var(--radius); box-shadow: var(--shadow);
+  padding: 22px 26px; margin-bottom: 12px;
+}
+.dex-progress__top { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; }
+.dex-progress__count { font-family: var(--font-display); font-size: 1.8rem; color: #fff; }
+.dex-progress__pct { font-family: var(--font-display); color: var(--clay); font-size: 1.4rem; }
+.dex-bar { height: 14px; background: rgba(255,255,255,0.15); border-radius: 20px; overflow: hidden; margin-top: 12px; }
+.dex-bar__fill { height: 100%; background: linear-gradient(90deg, var(--moss), var(--clay)); border-radius: 20px; transition: width 1s ease; }
+
+.dex-group { margin-top: 44px; }
+.dex-group__head { display: flex; align-items: baseline; gap: 12px; }
+.dex-group__head h2 { margin: 0; }
+.dex-group__tally { font-family: var(--font-display); color: var(--stone); letter-spacing: 1px; margin-left: auto; }
+.dex-group__tally--done { color: var(--clay); }
+/* per-category progress bar — each section completes on its own */
+.dex-group__bar { height: 9px; background: rgba(0,0,0,0.08); border-radius: 20px; overflow: hidden; margin: 10px 0 18px; }
+.dex-group__fill { height: 100%; width: 0; background: linear-gradient(90deg, var(--moss), var(--clay)); border-radius: 20px; transition: width .9s ease; }
+.dex-group__fill--done { background: var(--clay); }
+
+/* Poster reference link */
+.poster-link {
+  display: flex; align-items: center; gap: 16px; text-decoration: none;
+  background: #fff; border: 1px solid var(--sand); border-radius: var(--radius);
+  padding: 12px 16px; box-shadow: var(--shadow); margin-bottom: 8px; color: var(--ink);
+  transition: transform .12s ease;
+}
+.poster-link:hover { transform: translateY(-2px); }
+.poster-link img { width: 60px; height: 78px; object-fit: cover; border-radius: 6px; border: 1px solid var(--sand); }
+.poster-link__txt b { font-family: var(--font-display); color: var(--forest); letter-spacing: 0.5px; display: block; font-size: 1.05rem; }
+.poster-link__txt span { font-size: 0.85rem; color: var(--stone); }
+
+/* Caught-fish photo in a dex slot */
+.dex-card__photo { width: 100%; height: 88px; object-fit: cover; border-radius: 6px; margin: 2px 0 8px; border: 1px solid var(--moss); }
+
+.dex-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.dex-card {
+  position: relative; background: #fff; border: 1px solid var(--sand);
+  border-radius: var(--radius); padding: 14px 14px 16px; text-align: center;
+  box-shadow: var(--shadow); overflow: hidden;
+}
+.dex-card__fish { width: 82px; height: 44px; margin: 4px auto 8px; }
+.dex-card__fish svg { width: 100%; height: 100%; }
+.dex-card__name { font-family: var(--font-display); font-size: 1rem; line-height: 1.1; color: var(--forest); }
+.dex-card__sci { font-style: italic; font-size: 0.72rem; color: var(--stone); margin: 2px 0 4px; }
+.dex-card__where { font-size: 0.72rem; color: #6a6355; line-height: 1.3; }
+.dex-card__stamp {
+  position: absolute; top: 10px; right: 10px; font-family: var(--font-display);
+  font-size: 0.62rem; letter-spacing: 1px; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 20px;
+}
+.dex-card--caught { border-color: var(--moss); }
+.dex-card--caught .dex-card__fish { color: var(--moss); }
+.dex-card--caught .dex-card__stamp { background: var(--moss); color: #fff; }
+.dex-card--locked { background: #efeadd; }
+.dex-card--locked .dex-card__fish { color: #c3bdae; filter: grayscale(1); }
+.dex-card--locked .dex-card__name,
+.dex-card--locked .dex-card__sci,
+.dex-card--locked .dex-card__where { color: #b0a996; }
+.dex-card--locked .dex-card__stamp { background: #d9d3c4; color: #8a8577; }
+
+/* ---------- Season standings ---------- */
+.standings { display: grid; gap: 14px; margin-top: 24px; }
+.standings__champ {
+  background: var(--bark); color: var(--sand); border-radius: var(--radius);
+  padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+  box-shadow: var(--shadow);
+}
+.standings__champ b { color: #fff; font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 1px; }
+.standings__row {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px;
+  background: #fff; border: 1px solid var(--sand); border-radius: var(--radius); padding: 14px 18px; box-shadow: var(--shadow);
+}
+.standings__cat { text-align: center; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 1px; font-size: 0.78rem; color: var(--stone); }
+.standings__side { display: flex; align-items: center; gap: 10px; }
+.standings__side--r { justify-content: flex-end; }
+.standings__val { font-family: var(--font-display); font-size: 1.5rem; color: var(--forest); }
+.standings__name { font-size: 0.9rem; color: var(--stone); }
+.standings__side.win .standings__val { color: var(--clay); }
+.standings__side.win .standings__name::after { content: " 👑"; }
+
+/* ---------- Trophy case ---------- */
+.trophies { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 24px; }
+.trophy {
+  background: #fff; border: 1px solid var(--sand); border-radius: var(--radius);
+  padding: 20px 14px; text-align: center; box-shadow: var(--shadow);
+}
+.trophy__icon { font-size: 2.4rem; line-height: 1; }
+.trophy__name { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 1px; font-size: 0.82rem; margin-top: 8px; color: var(--forest); }
+.trophy__desc { font-size: 0.76rem; color: var(--stone); margin-top: 4px; }
+.trophy--locked { background: #efeadd; }
+.trophy--locked .trophy__icon { filter: grayscale(1); opacity: 0.4; }
+.trophy--locked .trophy__name { color: #b0a996; }
+
+/* ---------- Weather widget ---------- */
+.weather {
+  display: flex; align-items: center; gap: 22px; flex-wrap: wrap;
+  background: linear-gradient(160deg, var(--forest), var(--forest-dk));
+  color: var(--sand); border-radius: var(--radius); padding: 20px 26px; box-shadow: var(--shadow);
+}
+.weather__temp { font-family: var(--font-display); font-size: 3rem; color: #fff; line-height: 1; }
+.weather__ico { font-size: 2.6rem; }
+.weather__meta { font-size: 0.9rem; }
+.weather__meta b { color: #fff; font-family: var(--font-display); letter-spacing: 1px; font-size: 1.05rem; display: block; }
+.weather__sub { color: var(--sand); opacity: 0.85; }
+.weather-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
+.weather-head h2 { margin: 0; }
+.spot-select {
+  font-family: var(--font-display); font-size: 0.95rem; letter-spacing: 0.5px;
+  color: var(--forest); background: #fff; border: 2px solid var(--moss);
+  border-radius: 8px; padding: 8px 14px; cursor: pointer;
+}
+.spot-select:focus { outline: 2px solid var(--clay); }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 820px) {
   .grid--3, .catch-grid, .gallery { grid-template-columns: repeat(2, 1fr); }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .stats__item:nth-child(2) { border-right: 0; }
+  .dex-grid, .trophies { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 620px) {
   .nav__links {
@@ -275,4 +394,6 @@ img { max-width: 100%; display: block; }
   .nav__toggle { display: block; }
   .grid--3, .grid--2, .catch-grid, .gallery { grid-template-columns: 1fr; }
   .stats { grid-template-columns: 1fr 1fr; }
+  .dex-grid, .trophies { grid-template-columns: 1fr 1fr; }
+  .standings__row { grid-template-columns: 1fr auto 1fr; }
 }

@@ -1,0 +1,39 @@
+# Pages CMS configuration  —  https://pagescms.org
+# This lets Haiden & Mario edit the Catch Dex and upload catch photos
+# from any device (including a phone) without touching code.
+# Everything saves as a normal commit to the GitHub repo.
+
+media:
+  input: assets/dex          # where uploaded photos are stored in the repo
+  output: assets/dex         # the path written into the data (keep these the same)
+  extensions: [jpg, jpeg, png, webp, heic]
+
+content:
+  - name: fish
+    label: Catch Dex — Fish of Utah
+    type: file
+    path: data/fish.json
+    fields:
+      - name: fish
+        label: Species
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Species, type: string }
+          - name: group
+            label: Category
+            type: select
+            options:
+              values:
+                - Cold Water Sport Fish
+                - Warm Water Sport Fish
+                - Sunfish & Crappie
+                - Catfish, Suckers, Chubs & Carp
+                - Minnows & Small Fish
+                - Sculpin & Burbot
+          - { name: sci, label: Scientific name, type: string }
+          - { name: where, label: Where found, type: string }
+          - { name: caught, label: "Caught?", type: boolean, default: false }
+          - { name: by, label: Caught by, type: string }
+          - { name: date, label: Date caught, type: string }
+          - { name: photo, label: Catch photo, type: image }

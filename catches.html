@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Catch Log — Trailmarks</title>
+  <title>Catch Log — Gulo</title>
   <meta name="description" content="Fishing catch log: species, spots, sizes, and conditions from Haiden and Mario." />
 
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Catch Log — Trailmarks" />
+  <meta property="og:title" content="Catch Log — Gulo" />
   <meta property="og:description" content="Fishing catch log: species, spots, sizes, and conditions from Haiden and Mario." />
   <meta property="og:image" content="assets/social-card.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -22,7 +22,7 @@
 
   <header class="nav">
     <div class="container nav__inner">
-      <a class="nav__brand" href="index.html"><img class="nav__logo" src="assets/logo-cream.png" alt="Trailmarks wolf logo" />TRAIL<span>MARKS</span></a>
+      <a class="nav__brand" href="index.html"><img class="nav__lockup" src="assets/logo-lockup.png" alt="Gulo" /></a>
       <button class="nav__toggle" aria-label="Menu">&#9776;</button>
       <nav>
         <ul class="nav__links">
@@ -30,6 +30,7 @@
           <li><a href="adventures.html">Adventures</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="catches.html">Catch Log</a></li>
+          <li><a href="catchdex.html">Catch Dex</a></li>
         </ul>
       </nav>
     </div>
@@ -51,6 +52,18 @@
     <div class="scoreboard__item"><div class="scoreboard__num" data-score="total">0</div><div class="scoreboard__label">Total Fish</div></div>
   </div>
 
+  <!-- LIVE FISHING CONDITIONS (free Open-Meteo API, no key needed) -->
+  <section class="section--tight container">
+    <p class="eyebrow">Fishing conditions</p>
+    <div class="weather-head">
+      <h2>Right now at <span id="spotName">Strawberry Reservoir</span></h2>
+      <select class="spot-select" id="spotSelect" aria-label="Choose a fishing spot"></select>
+    </div>
+    <div class="weather" id="weather">
+      <div class="weather__meta"><b>Loading conditions…</b></div>
+    </div>
+  </section>
+
   <section class="section container">
 
     <div class="filters">
@@ -58,7 +71,6 @@
       <button data-filter="Haiden">Haiden</button>
       <button data-filter="Mario">Mario</button>
       <button data-filter="trout">Trout</button>
-      <button data-filter="bass">Bass</button>
     </div>
 
     <div class="catch-grid">
@@ -140,12 +152,66 @@
 
   <footer class="footer">
     <div class="container">
-      <div class="footer__brand">TRAIL<span>MARKS</span></div>
+      <div class="footer__brand">GULO</div>
       <p>Made by two friends who'd rather be outside.</p>
       <small>&copy; <span data-year></span> Haiden &amp; Mario</small>
     </div>
   </footer>
 
+  <!-- Live weather via Open-Meteo (free, no API key). Add/edit spots in the SPOTS list. -->
+  <script>
+    (function weather() {
+      // Add your own spots here: { name, lat, lon }
+      const SPOTS = [
+        { name: "Strawberry Reservoir", lat: 40.1799, lon: -111.1710 },
+        { name: "Fish Lake",            lat: 38.5486, lon: -111.7160 },
+        { name: "Flaming Gorge",        lat: 40.9141, lon: -109.4220 },
+        { name: "Lake Powell",          lat: 36.9370, lon: -111.4830 },
+        { name: "Bear Lake",            lat: 41.9483, lon: -111.3080 },
+        { name: "Jordanelle Reservoir", lat: 40.6069, lon: -111.4230 },
+        { name: "Pineview Reservoir",   lat: 41.2585, lon: -111.7910 },
+        { name: "Utah Lake",            lat: 40.2225, lon: -111.7930 }
+      ];
+      const el = document.getElementById("weather");
+      const sel = document.getElementById("spotSelect");
+      const nameEl = document.getElementById("spotName");
+      if (!el || !sel) return;
+      const codes = {
+        0:["Clear","☀️"],1:["Mostly clear","🌤️"],2:["Partly cloudy","⛅"],3:["Overcast","☁️"],
+        45:["Fog","🌫️"],48:["Rime fog","🌫️"],51:["Light drizzle","🌦️"],53:["Drizzle","🌦️"],55:["Heavy drizzle","🌧️"],
+        61:["Light rain","🌦️"],63:["Rain","🌧️"],65:["Heavy rain","🌧️"],71:["Light snow","🌨️"],73:["Snow","🌨️"],75:["Heavy snow","❄️"],
+        80:["Showers","🌦️"],81:["Showers","🌧️"],82:["Violent showers","⛈️"],95:["Thunderstorm","⛈️"],96:["Storm w/ hail","⛈️"],99:["Storm w/ hail","⛈️"]
+      };
+      sel.innerHTML = SPOTS.map((s, i) => `<option value="${i}">${s.name}</option>`).join("");
+
+      function load(spot) {
+        nameEl.textContent = spot.name;
+        el.innerHTML = `<div class="weather__meta"><b>Loading conditions…</b></div>`;
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${spot.lat}&longitude=${spot.lon}`
+          + `&current=temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,wind_speed_10m`
+          + `&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=auto`;
+        fetch(url)
+          .then(r => r.json())
+          .then(d => {
+            const c = d.current;
+            const [desc, ico] = codes[c.weather_code] || ["—","🌡️"];
+            el.innerHTML =
+              `<div class="weather__ico">${ico}</div>`
+              + `<div class="weather__temp">${Math.round(c.temperature_2m)}°</div>`
+              + `<div class="weather__meta"><b>${desc}</b>`
+              + `<span class="weather__sub">Feels ${Math.round(c.apparent_temperature)}° · `
+              + `Wind ${Math.round(c.wind_speed_10m)} mph · Humidity ${c.relative_humidity_2m}%</span></div>`;
+          })
+          .catch(() => {
+            el.innerHTML = `<div class="weather__meta"><b>Conditions unavailable</b>`
+              + `<span class="weather__sub">Couldn't reach the weather service right now.</span></div>`;
+          });
+      }
+
+      sel.addEventListener("change", () => load(SPOTS[sel.value]));
+      load(SPOTS[0]);
+    })();
+  </script>
   <script src="script.js"></script>
 </body>
 </html>

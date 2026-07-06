@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adventures — Trailmarks</title>
+  <title>Adventures — Gulo</title>
   <meta name="description" content="Trip logs from Haiden and Mario's hikes and fishing trips." />
 
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Adventures — Trailmarks" />
+  <meta property="og:title" content="Adventures — Gulo" />
   <meta property="og:description" content="Trip logs from Haiden and Mario's hikes and fishing trips." />
   <meta property="og:image" content="assets/social-card.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -24,7 +24,7 @@
 
   <header class="nav">
     <div class="container nav__inner">
-      <a class="nav__brand" href="index.html"><img class="nav__logo" src="assets/logo-cream.png" alt="Trailmarks wolf logo" />TRAIL<span>MARKS</span></a>
+      <a class="nav__brand" href="index.html"><img class="nav__lockup" src="assets/logo-lockup.png" alt="Gulo" /></a>
       <button class="nav__toggle" aria-label="Menu">&#9776;</button>
       <nav>
         <ul class="nav__links">
@@ -32,6 +32,7 @@
           <li><a href="adventures.html">Adventures</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="catches.html">Catch Log</a></li>
+          <li><a href="catchdex.html">Catch Dex</a></li>
         </ul>
       </nav>
     </div>
@@ -56,7 +57,7 @@
   <section class="section container">
     <div class="grid grid--3">
 
-      <article class="card">
+      <article class="card" id="trip-alpine">
         <div class="card__media"><div class="ph">assets/trip-alpine.jpg</div></div>
         <div class="card__body">
           <span class="card__tag">Hiking</span>
@@ -66,7 +67,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" id="trip-cedar">
         <div class="card__media"><div class="ph">assets/trip-lake.jpg</div></div>
         <div class="card__body">
           <span class="card__tag card__tag--fishing">Fishing</span>
@@ -76,7 +77,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" id="trip-river">
         <div class="card__media"><div class="ph">assets/trip-river.jpg</div></div>
         <div class="card__body">
           <span class="card__tag">Hiking</span>
@@ -86,7 +87,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" id="trip-millers">
         <div class="card__media"><div class="ph">assets/trip-bass.jpg</div></div>
         <div class="card__body">
           <span class="card__tag card__tag--fishing">Fishing</span>
@@ -96,7 +97,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" id="trip-granite">
         <div class="card__media"><div class="ph">assets/trip-summit.jpg</div></div>
         <div class="card__body">
           <span class="card__tag">Hiking</span>
@@ -121,7 +122,7 @@
 
   <footer class="footer">
     <div class="container">
-      <div class="footer__brand">TRAIL<span>MARKS</span></div>
+      <div class="footer__brand">GULO</div>
       <p>Made by two friends who'd rather be outside.</p>
       <small>&copy; <span data-year></span> Haiden &amp; Mario</small>
     </div>
@@ -130,28 +131,59 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     // ---- Trip pins ----------------------------------------------------
-    // Edit this list: [latitude, longitude, "Name", "hike" or "fish"]
+    // Edit this list. Each entry: { lat, lng, name, type: "hike"|"fish", link, date }
+    // - type sets the pin color (green = hike, orange = fish)
+    // - link jumps to that trip's card lower on the page
     // Find coordinates by right-clicking a spot in Google Maps.
     const trips = [
-      [44.4280, -110.5885, "Alpine Ridge Hike", "hike"],
-      [43.8791, -110.6818, "Cedar Lake (fishing)", "fish"],
-      [44.2705, -110.8377, "The River Loop", "hike"],
-      [44.0000, -110.7000, "Miller's Pond (fishing)", "fish"],
-      [45.0000, -109.9000, "Granite Peak Summit", "hike"]
+      { lat: 40.7608, lng: -111.8910, name: "Sunrise on Alpine Ridge", type: "hike", link: "trip-alpine",  date: "Jun 14" },
+      { lat: 40.1799, lng: -111.1710, name: "Rainbows at Cedar Lake",   type: "fish", link: "trip-cedar",   date: "May 30" },
+      { lat: 40.6461, lng: -111.4980, name: "The River Loop",           type: "hike", link: "trip-river",   date: "Apr 18" },
+      { lat: 40.2338, lng: -111.6585, name: "Bass at Dawn — Miller's",  type: "fish", link: "trip-millers", date: "Apr 2"  },
+      { lat: 40.5247, lng: -110.8290, name: "Granite Peak Summit",      type: "hike", link: "trip-granite", date: "Mar 21" }
     ];
 
-    const map = L.map("tripmap");
+    const COLORS = { hike: "#6b7f4e", fish: "#b5622f" };
+
+    const map = L.map("tripmap", { scrollWheelZoom: false });
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 18,
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    const markers = trips.map(([lat, lng, name, type]) => {
-      const emoji = type === "fish" ? "🎣" : "🥾";
-      return L.marker([lat, lng]).addTo(map).bindPopup(`${emoji} <b>${name}</b>`);
+    // Season route line connecting the trips in order
+    L.polyline(trips.map(t => [t.lat, t.lng]), {
+      color: "#2f4030", weight: 3, opacity: 0.6, dashArray: "6 8"
+    }).addTo(map);
+
+    // Colored circle markers with popups that link to the trip card
+    const markers = trips.map(t => {
+      const emoji = t.type === "fish" ? "🎣" : "🥾";
+      const marker = L.circleMarker([t.lat, t.lng], {
+        radius: 10, color: "#fff", weight: 2,
+        fillColor: COLORS[t.type], fillOpacity: 1
+      }).addTo(map);
+      marker.bindPopup(
+        `<b>${emoji} ${t.name}</b><br><span style="color:#8a8577">${t.date}, 2026</span>`
+        + `<br><a href="#${t.link}">Read the trip &rarr;</a>`
+      );
+      return marker;
     });
-    // Fit the map to show all pins
+
     map.fitBounds(L.featureGroup(markers).getBounds().pad(0.25));
+
+    // Smooth-scroll & briefly highlight a trip when its popup link is clicked
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest('.leaflet-popup a[href^="#"]');
+      if (!a) return;
+      e.preventDefault();
+      const card = document.getElementById(a.getAttribute("href").slice(1));
+      if (!card) return;
+      card.scrollIntoView({ behavior: "smooth", block: "center" });
+      card.style.transition = "box-shadow .3s ease";
+      card.style.boxShadow = "0 0 0 3px var(--clay)";
+      setTimeout(() => (card.style.boxShadow = ""), 1600);
+    });
   </script>
   <script src="script.js"></script>
 </body>

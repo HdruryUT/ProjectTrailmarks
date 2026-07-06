@@ -1,4 +1,4 @@
-/* Trailmarks — shared interactivity */
+/* Gulo — shared interactivity */
 
 // Mobile nav toggle
 document.addEventListener("click", (e) => {
@@ -74,6 +74,25 @@ document.addEventListener("click", (e) => {
     const key = el.dataset.score;
     el.textContent = key === "total" ? catches.length : (counts[key] || 0);
   });
+})();
+
+// Season standings — highlight the leader in each category and crown a champion
+(function standings() {
+  const rows = document.querySelectorAll(".standings__row");
+  if (!rows.length) return;
+  let hWins = 0, mWins = 0;
+  rows.forEach((row) => {
+    const h = parseFloat(row.dataset.h), m = parseFloat(row.dataset.m);
+    const sides = row.querySelectorAll(".standings__side");
+    if (h > m) { sides[0].classList.add("win"); hWins++; }
+    else if (m > h) { sides[1].classList.add("win"); mWins++; }
+  });
+  const champ = document.getElementById("champName");
+  if (champ) {
+    champ.textContent = hWins > mWins ? "Haiden 🏆"
+      : mWins > hWins ? "Mario 🏆"
+      : "Dead heat 🤝";
+  }
 })();
 
 // Footer year
