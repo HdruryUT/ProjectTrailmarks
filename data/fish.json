@@ -32,8 +32,9 @@
       "name": "Rainbow Trout",
       "group": "Cold Water Sport Fish",
       "sci": "Oncorhynchus mykiss",
-      "where": "Provo River, Strawberry, Scofield Reservoir",
-      "caught": false
+      "where": "Strawberry Reservoir",
+      "caught": true,
+      "by": "Powerboat"
     },
     {
       "name": "Brook Trout",
@@ -46,8 +47,9 @@
       "name": "Tiger Trout",
       "group": "Cold Water Sport Fish",
       "sci": "Salmo trutta × Salvelinus fontinalis",
-      "where": "Scofield, Palisade, Miller Flat",
-      "caught": false
+      "where": "Salem pond",
+      "caught": true,
+      "by": "Worm"
     },
     {
       "name": "Splake",
@@ -109,8 +111,10 @@
       "name": "Largemouth Bass",
       "group": "Warm Water Sport Fish",
       "sci": "Micropterus salmoides",
-      "where": "Utah Lake, Sand Hollow, Lake Powell",
-      "caught": false
+      "where": "Utah Lake",
+      "caught": true,
+      "by": "Crank bait",
+      "photo": "assets/dex/FullSizeRender.jpeg"
     },
     {
       "name": "Smallmouth Bass",
@@ -137,8 +141,10 @@
       "name": "White Bass",
       "group": "Warm Water Sport Fish",
       "sci": "Morone chrysops",
-      "where": "Utah Lake, DMAD, Gunnison Bend",
-      "caught": false
+      "where": "Utah Lake",
+      "caught": true,
+      "by": "Spinner",
+      "photo": "assets/dex/IMG_0653-1.jpeg"
     },
     {
       "name": "Northern Pike",
@@ -207,8 +213,8 @@
       "name": "Black Bullhead Catfish",
       "group": "Catfish, Suckers, Chubs & Carp",
       "sci": "Ameiurus melas",
-      "where": "Utah Lake, Mantua, community ponds",
-      "caught": false
+      "where": "Utah Lake",
+      "caught": true
     },
     {
       "name": "Bluehead Sucker",
@@ -263,8 +269,9 @@
       "name": "Common Carp",
       "group": "Catfish, Suckers, Chubs & Carp",
       "sci": "Cyprinus carpio",
-      "where": "Utah Lake, Lake Powell, Willard Bay & ponds",
-      "caught": false
+      "where": "Utah Lake",
+      "caught": true,
+      "by": "Shrimp"
     },
     {
       "name": "Redside Shiner",
