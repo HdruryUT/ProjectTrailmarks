@@ -1,0 +1,46 @@
+# Decap CMS configuration for GULO
+# Editors log in by email (via Netlify Identity) — no GitHub account needed.
+# Changes are saved straight to the repo and the live site updates.
+
+backend:
+  name: git-gateway
+  branch: main
+
+# Where uploaded catch photos are stored / referenced
+media_folder: "assets/dex"
+public_folder: "assets/dex"
+
+# Optional: require review before publishing. Off = saves go live immediately.
+publish_mode: simple
+
+collections:
+  - name: "catchdex"
+    label: "Catch Dex — Fish of Utah"
+    files:
+      - name: "fish"
+        label: "Fish list"
+        file: "data/fish.json"
+        description: "Mark a fish caught, add who/when, and upload a catch photo."
+        fields:
+          - label: "Species"
+            name: "fish"
+            widget: "list"
+            summary: "{{fields.name}} — {{#if fields.caught}}✓ caught{{else}}locked{{/if}}"
+            fields:
+              - { label: "Species", name: "name", widget: "string" }
+              - label: "Category"
+                name: "group"
+                widget: "select"
+                options:
+                  - "Cold Water Sport Fish"
+                  - "Warm Water Sport Fish"
+                  - "Sunfish & Crappie"
+                  - "Catfish, Suckers, Chubs & Carp"
+                  - "Minnows & Small Fish"
+                  - "Sculpin & Burbot"
+              - { label: "Scientific name", name: "sci", widget: "string" }
+              - { label: "Where found", name: "where", widget: "string" }
+              - { label: "Caught?", name: "caught", widget: "boolean", default: false }
+              - { label: "Caught by", name: "by", widget: "string", required: false }
+              - { label: "Date caught", name: "date", widget: "string", required: false }
+              - { label: "Catch photo", name: "photo", widget: "image", required: false, choose_url: false }
