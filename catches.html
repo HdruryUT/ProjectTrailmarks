@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catch Log — Trailmarks</title>
+  <meta name="description" content="Fishing catch log: species, spots, sizes, and conditions from Haiden and Mario." />
+
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Catch Log — Trailmarks" />
+  <meta property="og:description" content="Fishing catch log: species, spots, sizes, and conditions from Haiden and Mario." />
+  <meta property="og:image" content="assets/social-card.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Bitter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="index.html"><img class="nav__logo" src="assets/logo-cream.png" alt="Trailmarks wolf logo" />TRAIL<span>MARKS</span></a>
+      <button class="nav__toggle" aria-label="Menu">&#9776;</button>
+      <nav>
+        <ul class="nav__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="adventures.html">Adventures</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="catches.html">Catch Log</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="pagehead">
+    <div class="container">
+      <p class="eyebrow">Tight lines</p>
+      <h1>The Catch Log</h1>
+      <p>Every fish worth bragging about. Filter by who reeled it in — the scoreboard doesn't lie.</p>
+    </div>
+  </section>
+
+  <!-- SCOREBOARD (auto-counts from the cards below) -->
+  <div class="scoreboard container">
+    <div class="scoreboard__item"><div class="scoreboard__num" data-score="Haiden">0</div><div class="scoreboard__label">Haiden</div></div>
+    <div class="scoreboard__item scoreboard__vs">vs</div>
+    <div class="scoreboard__item"><div class="scoreboard__num" data-score="Mario">0</div><div class="scoreboard__label">Mario</div></div>
+    <div class="scoreboard__item"><div class="scoreboard__num" data-score="total">0</div><div class="scoreboard__label">Total Fish</div></div>
+  </div>
+
+  <section class="section container">
+
+    <div class="filters">
+      <button class="active" data-filter="all">All Catches</button>
+      <button data-filter="Haiden">Haiden</button>
+      <button data-filter="Mario">Mario</button>
+      <button data-filter="trout">Trout</button>
+      <button data-filter="bass">Bass</button>
+    </div>
+
+    <div class="catch-grid">
+
+      <div class="catch" data-angler="Mario" data-type="trout">
+        <div class="catch__species">Rainbow Trout</div>
+        <span class="badge-angler">Caught by Mario</span>
+        <div style="margin-top:12px;">
+          <div class="catch__row"><span>Location</span><span>Cedar Lake</span></div>
+          <div class="catch__row"><span>Size</span><span>16 in</span></div>
+          <div class="catch__row"><span>Bait / Lure</span><span>Spinner</span></div>
+          <div class="catch__row"><span>Conditions</span><span>Calm, overcast</span></div>
+          <div class="catch__row"><span>Date</span><span>May 30, 2026</span></div>
+        </div>
+      </div>
+
+      <div class="catch" data-angler="Haiden" data-type="bass">
+        <div class="catch__species">Largemouth Bass</div>
+        <span class="badge-angler">Caught by Haiden</span>
+        <div style="margin-top:12px;">
+          <div class="catch__row"><span>Location</span><span>Miller's Pond</span></div>
+          <div class="catch__row"><span>Size</span><span>4.1 lb</span></div>
+          <div class="catch__row"><span>Bait / Lure</span><span>Topwater frog</span></div>
+          <div class="catch__row"><span>Conditions</span><span>Sunrise, glassy</span></div>
+          <div class="catch__row"><span>Date</span><span>April 2, 2026</span></div>
+        </div>
+      </div>
+
+      <div class="catch" data-angler="Mario" data-type="bass">
+        <div class="catch__species">Smallmouth Bass</div>
+        <span class="badge-angler">Caught by Mario</span>
+        <div style="margin-top:12px;">
+          <div class="catch__row"><span>Location</span><span>Clearwater River</span></div>
+          <div class="catch__row"><span>Size</span><span>2.6 lb</span></div>
+          <div class="catch__row"><span>Bait / Lure</span><span>Crawfish jig</span></div>
+          <div class="catch__row"><span>Conditions</span><span>Warm, breezy</span></div>
+          <div class="catch__row"><span>Date</span><span>May 12, 2026</span></div>
+        </div>
+      </div>
+
+      <div class="catch" data-angler="Haiden" data-type="trout">
+        <div class="catch__species">Brook Trout</div>
+        <span class="badge-angler">Caught by Haiden</span>
+        <div style="margin-top:12px;">
+          <div class="catch__row"><span>Location</span><span>Cedar Lake</span></div>
+          <div class="catch__row"><span>Size</span><span>11 in</span></div>
+          <div class="catch__row"><span>Bait / Lure</span><span>Fly (Elk Hair Caddis)</span></div>
+          <div class="catch__row"><span>Conditions</span><span>Evening hatch</span></div>
+          <div class="catch__row"><span>Date</span><span>May 30, 2026</span></div>
+        </div>
+      </div>
+
+      <div class="catch" data-angler="Mario" data-type="trout">
+        <div class="catch__species">Brown Trout</div>
+        <span class="badge-angler">Caught by Mario</span>
+        <div style="margin-top:12px;">
+          <div class="catch__row"><span>Location</span><span>Clearwater River</span></div>
+          <div class="catch__row"><span>Size</span><span>14 in</span></div>
+          <div class="catch__row"><span>Bait / Lure</span><span>Nightcrawler</span></div>
+          <div class="catch__row"><span>Conditions</span><span>Cloudy, cool</span></div>
+          <div class="catch__row"><span>Date</span><span>April 25, 2026</span></div>
+        </div>
+      </div>
+
+      <div class="catch" data-angler="Haiden" data-type="bass">
+        <div class="catch__species">Largemouth Bass</div>
+        <span class="badge-angler">Caught by Haiden</span>
+        <div style="margin-top:12px;">
+          <div class="catch__row"><span>Location</span><span>Miller's Pond</span></div>
+          <div class="catch__row"><span>Size</span><span>2.9 lb</span></div>
+          <div class="catch__row"><span>Bait / Lure</span><span>Plastic worm</span></div>
+          <div class="catch__row"><span>Conditions</span><span>Hot afternoon</span></div>
+          <div class="catch__row"><span>Date</span><span>June 8, 2026</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__brand">TRAIL<span>MARKS</span></div>
+      <p>Made by two friends who'd rather be outside.</p>
+      <small>&copy; <span data-year></span> Haiden &amp; Mario</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

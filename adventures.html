@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adventures — Trailmarks</title>
+  <meta name="description" content="Trip logs from Haiden and Mario's hikes and fishing trips." />
+
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Adventures — Trailmarks" />
+  <meta property="og:description" content="Trip logs from Haiden and Mario's hikes and fishing trips." />
+  <meta property="og:image" content="assets/social-card.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Bitter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Leaflet map (free, OpenStreetMap) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="index.html"><img class="nav__logo" src="assets/logo-cream.png" alt="Trailmarks wolf logo" />TRAIL<span>MARKS</span></a>
+      <button class="nav__toggle" aria-label="Menu">&#9776;</button>
+      <nav>
+        <ul class="nav__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="adventures.html">Adventures</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="catches.html">Catch Log</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="pagehead">
+    <div class="container">
+      <p class="eyebrow">The logbook</p>
+      <h1>Our Adventures</h1>
+      <p>Every trip has a story. Here are ours — the good climbs, the great catches, and the times the map was definitely wrong.</p>
+    </div>
+  </section>
+
+  <!-- TRIP MAP -->
+  <section class="section--tight container">
+    <p class="eyebrow">Where we've been</p>
+    <h2>Trip Map</h2>
+    <p class="lead" style="margin-bottom:18px;">Every pin is a hike or a fishing spot. Update the coordinates in <code>adventures.html</code> to drop pins on your real places.</p>
+    <div id="tripmap" style="height:420px; border-radius:10px; border:1px solid var(--sand); box-shadow:var(--shadow);"></div>
+  </section>
+
+  <section class="section container">
+    <div class="grid grid--3">
+
+      <article class="card">
+        <div class="card__media"><div class="ph">assets/trip-alpine.jpg</div></div>
+        <div class="card__body">
+          <span class="card__tag">Hiking</span>
+          <h3>Sunrise on Alpine Ridge</h3>
+          <p>We started at 4 a.m. to catch first light from the ridge. Cold, dark, and absolutely worth it — the whole valley lit up gold below us.</p>
+          <div class="card__meta">June 14, 2026 &bull; 8.2 mi &bull; Elevation 2,400 ft</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__media"><div class="ph">assets/trip-lake.jpg</div></div>
+        <div class="card__body">
+          <span class="card__tag card__tag--fishing">Fishing</span>
+          <h3>Rainbows at Cedar Lake</h3>
+          <p>Perfect glassy morning at Cedar Lake. Mario landed five rainbow trout to Haiden's two. A rematch is officially scheduled.</p>
+          <div class="card__meta">May 30, 2026 &bull; 5 fish landed &bull; Best: 16"</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__media"><div class="ph">assets/trip-river.jpg</div></div>
+        <div class="card__body">
+          <span class="card__tag">Hiking</span>
+          <h3>The River Loop</h3>
+          <p>Rain rolled in halfway through and we lost the trail near the crossing. Found it again, soaked and laughing. Classic day out.</p>
+          <div class="card__meta">April 18, 2026 &bull; 6.5 mi &bull; Very muddy</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__media"><div class="ph">assets/trip-bass.jpg</div></div>
+        <div class="card__body">
+          <span class="card__tag card__tag--fishing">Fishing</span>
+          <h3>Bass at Dawn — Miller's Pond</h3>
+          <p>Topwater bite was on fire right at sunrise. Landed a chunky largemouth before the coffee even kicked in.</p>
+          <div class="card__meta">April 2, 2026 &bull; 3 fish landed &bull; Best: 4.1 lb</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__media"><div class="ph">assets/trip-summit.jpg</div></div>
+        <div class="card__body">
+          <span class="card__tag">Hiking</span>
+          <h3>Granite Peak Summit Push</h3>
+          <p>Our toughest climb yet. Loose scree near the top and wind that nearly took our hats, but we tagged the summit together.</p>
+          <div class="card__meta">March 21, 2026 &bull; 11.4 mi &bull; Elevation 3,900 ft</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__media"><div class="ph">Your next trip<br>goes here</div></div>
+        <div class="card__body">
+          <span class="card__tag">Coming soon</span>
+          <h3>Where to next?</h3>
+          <p>We've got a backcountry lake on the list for July. Check back for the full report — and hopefully a fish photo or two.</p>
+          <div class="card__meta">Planned &bull; July 2026</div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__brand">TRAIL<span>MARKS</span></div>
+      <p>Made by two friends who'd rather be outside.</p>
+      <small>&copy; <span data-year></span> Haiden &amp; Mario</small>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // ---- Trip pins ----------------------------------------------------
+    // Edit this list: [latitude, longitude, "Name", "hike" or "fish"]
+    // Find coordinates by right-clicking a spot in Google Maps.
+    const trips = [
+      [44.4280, -110.5885, "Alpine Ridge Hike", "hike"],
+      [43.8791, -110.6818, "Cedar Lake (fishing)", "fish"],
+      [44.2705, -110.8377, "The River Loop", "hike"],
+      [44.0000, -110.7000, "Miller's Pond (fishing)", "fish"],
+      [45.0000, -109.9000, "Granite Peak Summit", "hike"]
+    ];
+
+    const map = L.map("tripmap");
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 18,
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    const markers = trips.map(([lat, lng, name, type]) => {
+      const emoji = type === "fish" ? "🎣" : "🥾";
+      return L.marker([lat, lng]).addTo(map).bindPopup(`${emoji} <b>${name}</b>`);
+    });
+    // Fit the map to show all pins
+    map.fitBounds(L.featureGroup(markers).getBounds().pad(0.25));
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

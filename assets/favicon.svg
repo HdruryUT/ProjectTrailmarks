@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#2f4030"/>
+  <!-- mountains -->
+  <path d="M6 46 L24 20 L34 34 L42 24 L58 46 Z" fill="#6b7f4e"/>
+  <path d="M24 20 L30 28 L26 33 L20 27 Z" fill="#e7ddc9"/>
+  <!-- sun -->
+  <circle cx="46" cy="18" r="5" fill="#b5622f"/>
+  <!-- water line + little fish -->
+  <rect x="6" y="46" width="52" height="12" fill="#3a5566"/>
+  <path d="M40 52 l6 -3 v6 z" fill="#e7ddc9"/>
+  <circle cx="39" cy="52" r="1.4" fill="#e7ddc9"/>
+</svg>

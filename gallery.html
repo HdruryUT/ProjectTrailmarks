@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Trailmarks</title>
+  <meta name="description" content="Photos from Haiden and Mario's hiking and fishing trips." />
+
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Gallery — Trailmarks" />
+  <meta property="og:description" content="Photos from Haiden and Mario's hiking and fishing trips." />
+  <meta property="og:image" content="assets/social-card.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Bitter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="index.html"><img class="nav__logo" src="assets/logo-cream.png" alt="Trailmarks wolf logo" />TRAIL<span>MARKS</span></a>
+      <button class="nav__toggle" aria-label="Menu">&#9776;</button>
+      <nav>
+        <ul class="nav__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="adventures.html">Adventures</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="catches.html">Catch Log</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="pagehead">
+    <div class="container">
+      <p class="eyebrow">The good stuff</p>
+      <h1>Photo Gallery</h1>
+      <p>Click any photo to view it larger. Drop your own shots into the <code>assets/</code> folder and swap the placeholders — instructions are in the README.</p>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="gallery">
+      <!-- To use a real photo: replace the <div class="ph"> with
+           <img src="assets/your-photo.jpg" alt="description"> -->
+      <figure><div class="ph" style="height:240px;">assets/photo-01.jpg</div><figcaption>Ridge line at sunrise</figcaption></figure>
+      <figure><div class="ph" style="height:240px;">assets/photo-02.jpg</div><figcaption>Cedar Lake, calm morning</figcaption></figure>
+      <figure><div class="ph" style="height:240px;">assets/photo-03.jpg</div><figcaption>Mario's rainbow trout</figcaption></figure>
+      <figure><div class="ph" style="height:240px;">assets/photo-04.jpg</div><figcaption>Trailhead, boots ready</figcaption></figure>
+      <figure><div class="ph" style="height:240px;">assets/photo-05.jpg</div><figcaption>Granite Peak summit</figcaption></figure>
+      <figure><div class="ph" style="height:240px;">assets/photo-06.jpg</div><figcaption>Camp coffee</figcaption></figure>
+      <figure><div class="ph" style="height:240px;">assets/photo-07.jpg</div><figcaption>The river crossing</figcaption></figure>
+      <figure><div class="ph" style="height:240px;">assets/photo-08.jpg</div><figcaption>First light on the water</figcaption></figure>
+      <figure><div class="ph" style="height:240px;">assets/photo-09.jpg</div><figcaption>Largemouth bass, Miller's Pond</figcaption></figure>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__brand">TRAIL<span>MARKS</span></div>
+      <p>Made by two friends who'd rather be outside.</p>
+      <small>&copy; <span data-year></span> Haiden &amp; Mario</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

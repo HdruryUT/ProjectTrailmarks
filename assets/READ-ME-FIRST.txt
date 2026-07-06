@@ -1,0 +1,11 @@
+Put your photos in this folder.
+
+Suggested filenames the site already references (just drop matching images in):
+  hero.jpg        - big background image on the home page
+  haiden.jpg      - Haiden's photo (home "about" section)
+  mario.jpg       - Mario's photo (home "about" section)
+  trip-alpine.jpg, trip-lake.jpg, trip-river.jpg, trip-bass.jpg, trip-summit.jpg
+  photo-01.jpg ... photo-09.jpg  - gallery images
+
+You can use any filenames you like — just update the matching src="assets/..."
+in the HTML. See the README for step-by-step instructions.

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trailmarks — Haiden & Mario's Outdoor Adventures</title>
+  <meta name="description" content="Hiking and fishing adventures from Haiden and Mario. Trip logs, photos, and catches from the trail and the water." />
+
+  <!-- Favicon (browser tab icon) -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <!-- Social link preview (how the site looks when shared in a text / social post).
+       Once your site is live, replace the URLs below with your real address, e.g.
+       https://YOURUSERNAME.github.io/REPONAME/  and add assets/social-card.jpg -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Trailmarks — Haiden & Mario's Outdoor Adventures" />
+  <meta property="og:description" content="Hiking, fishing, photos, and a catch log from two friends who'd rather be outside." />
+  <meta property="og:image" content="assets/social-card.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Bitter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="index.html"><img class="nav__logo" src="assets/logo-cream.png" alt="Trailmarks wolf logo" />TRAIL<span>MARKS</span></a>
+      <button class="nav__toggle" aria-label="Menu">&#9776;</button>
+      <nav>
+        <ul class="nav__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="adventures.html">Adventures</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="catches.html">Catch Log</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <img class="hero__logo" src="assets/logo-cream.png" alt="Trailmarks wolf logo" />
+      <p class="eyebrow">Hiking &bull; Fishing &bull; Good times outside</p>
+      <h1>Two friends. <br>One endless trail.</h1>
+      <p>Welcome to Trailmarks — where Haiden and Mario log the hikes we climb, the fish we (sometimes) catch, and every muddy, sunburnt story in between.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="adventures.html">Read our adventures</a>
+        <a class="btn btn--ghost" href="gallery.html">See the photos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="stats__item"><div class="stats__num">18</div><div class="stats__label">Trails Hiked</div></div>
+    <div class="stats__item"><div class="stats__num">47</div><div class="stats__label">Fish Caught</div></div>
+    <div class="stats__item"><div class="stats__num">126</div><div class="stats__label">Trail Miles</div></div>
+    <div class="stats__item"><div class="stats__num">&#8734;</div><div class="stats__label">Stories Told</div></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section container">
+    <p class="eyebrow">Who we are</p>
+    <h2>The crew behind the boots and rods</h2>
+    <div class="grid grid--2" style="margin-top:24px; align-items:center;">
+      <div class="card">
+        <div class="card__media"><div class="ph">Add photo:<br>assets/haiden.jpg</div></div>
+        <div class="card__body">
+          <h3>Haiden</h3>
+          <p>Trail-obsessed and always chasing the next summit. Will hike four extra miles for a better view — and usually drags Mario along for it.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__media"><div class="ph">Add photo:<br>assets/mario.jpg</div></div>
+        <div class="card__body">
+          <h3>Mario</h3>
+          <p>The angler of the duo. Knows every good fishing hole within a hundred miles and swears the big one is always just one more cast away.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECENT -->
+  <section class="section section--tight container">
+    <p class="eyebrow">Fresh off the trail</p>
+    <h2>Recent adventures</h2>
+    <div class="grid grid--3" style="margin-top:24px;">
+      <article class="card">
+        <div class="card__media"><div class="ph">assets/trip-alpine.jpg</div></div>
+        <div class="card__body">
+          <span class="card__tag">Hiking</span>
+          <h3>Sunrise on Alpine Ridge</h3>
+          <p>A pre-dawn start, half a thermos of coffee, and the best view we've earned all year.</p>
+          <div class="card__meta">June 2026 &bull; 8.2 mi</div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><div class="ph">assets/trip-lake.jpg</div></div>
+        <div class="card__body">
+          <span class="card__tag card__tag--fishing">Fishing</span>
+          <h3>Rainbows at Cedar Lake</h3>
+          <p>Mario finally out-fished Haiden. We will never hear the end of it.</p>
+          <div class="card__meta">May 2026 &bull; 5 fish landed</div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><div class="ph">assets/trip-river.jpg</div></div>
+        <div class="card__body">
+          <span class="card__tag">Hiking</span>
+          <h3>The River Loop</h3>
+          <p>Got caught in the rain, lost the trail once, and had a blast anyway.</p>
+          <div class="card__meta">April 2026 &bull; 6.5 mi</div>
+        </div>
+      </article>
+    </div>
+    <p style="margin-top:28px;"><a class="btn btn--primary" href="adventures.html">All adventures &rarr;</a></p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__brand">TRAIL<span>MARKS</span></div>
+      <p>Made by two friends who'd rather be outside.</p>
+      <small>&copy; <span data-year></span> Haiden &amp; Mario</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

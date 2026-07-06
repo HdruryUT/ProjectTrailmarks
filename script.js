@@ -1,0 +1,82 @@
+/* Trailmarks — shared interactivity */
+
+// Mobile nav toggle
+document.addEventListener("click", (e) => {
+  const toggle = e.target.closest(".nav__toggle");
+  if (toggle) {
+    document.querySelector(".nav__links")?.classList.toggle("open");
+  }
+});
+
+// Highlight current page in nav
+(function markCurrent() {
+  const path = location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll(".nav__links a").forEach((a) => {
+    if (a.getAttribute("href") === path) a.setAttribute("aria-current", "page");
+  });
+})();
+
+// Gallery lightbox
+(function lightbox() {
+  const gallery = document.querySelector(".gallery");
+  if (!gallery) return;
+
+  const box = document.createElement("div");
+  box.className = "lightbox";
+  box.innerHTML =
+    '<button class="lightbox__close" aria-label="Close">&times;</button><img alt="">';
+  document.body.appendChild(box);
+  const boxImg = box.querySelector("img");
+
+  gallery.addEventListener("click", (e) => {
+    const fig = e.target.closest("figure");
+    const img = fig?.querySelector("img");
+    if (!img) return;
+    boxImg.src = img.src;
+    boxImg.alt = img.alt;
+    box.classList.add("open");
+  });
+  const close = () => box.classList.remove("open");
+  box.addEventListener("click", (e) => {
+    if (e.target === box || e.target.closest(".lightbox__close")) close();
+  });
+  document.addEventListener("keydown", (e) => e.key === "Escape" && close());
+})();
+
+// Catch log filters
+(function catchFilters() {
+  const filters = document.querySelector(".filters");
+  if (!filters) return;
+  filters.addEventListener("click", (e) => {
+    const btn = e.target.closest("button");
+    if (!btn) return;
+    filters.querySelectorAll("button").forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+    const f = btn.dataset.filter;
+    document.querySelectorAll(".catch").forEach((c) => {
+      const show = f === "all" || c.dataset.angler === f || c.dataset.type === f;
+      c.style.display = show ? "" : "none";
+    });
+  });
+})();
+
+// Catch scoreboard tally
+(function scoreboard() {
+  const board = document.querySelector(".scoreboard");
+  if (!board) return;
+  const catches = document.querySelectorAll(".catch");
+  const counts = {};
+  catches.forEach((c) => {
+    const a = c.dataset.angler;
+    counts[a] = (counts[a] || 0) + 1;
+  });
+  board.querySelectorAll("[data-score]").forEach((el) => {
+    const key = el.dataset.score;
+    el.textContent = key === "total" ? catches.length : (counts[key] || 0);
+  });
+})();
+
+// Footer year
+document.querySelectorAll("[data-year]").forEach((el) => {
+  el.textContent = new Date().getFullYear();
+});
