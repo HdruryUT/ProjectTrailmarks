@@ -47,7 +47,7 @@
       "where": "Strawberry Reservoir",
       "haiden": true,
       "mario": false,
-      "haidenPhoto": "assets/dex/gulo-photo Rainbow.jpg",
+      "haidenPhoto": "assets/dex/gulo-photo-Rainbow.jpg",
       "marioPhoto": ""
     },
     {
@@ -67,7 +67,7 @@
       "where": "Salem pond",
       "haiden": true,
       "mario": false,
-      "haidenPhoto": "assets/dex/gulo-photo tiger.jpg",
+      "haidenPhoto": "assets/dex/gulo-photo-tiger.jpg",
       "marioPhoto": ""
     },
     {
@@ -297,7 +297,7 @@
       "where": "Utah Lake",
       "haiden": true,
       "mario": false,
-      "haidenPhoto": "assets/dex/gulo-photo catfish.jpg",
+      "haidenPhoto": "assets/dex/gulo-photo-catfish.jpg",
       "marioPhoto": ""
     },
     {
@@ -377,7 +377,7 @@
       "where": "Utah Lake",
       "haiden": true,
       "mario": false,
-      "haidenPhoto": "assets/dex/gulo-photo carp.jpg",
+      "haidenPhoto": "assets/dex/gulo-photo-carp.jpg",
       "marioPhoto": ""
     },
     {
