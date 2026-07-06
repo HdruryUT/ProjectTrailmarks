@@ -34,7 +34,7 @@
       "sci": "Oncorhynchus mykiss",
       "where": "Strawberry Reservoir",
       "caught": true,
-      "by": "Powerboat",
+      "by": "Powerbait",
       "photo": "assets/dex/gulo-photo Rainbow.jpg"
     },
     {
@@ -217,6 +217,7 @@
       "sci": "Ameiurus melas",
       "where": "Utah Lake",
       "caught": true,
+      "by": "Shrimp",
       "photo": "assets/dex/gulo-photo catfish.jpg"
     },
     {
