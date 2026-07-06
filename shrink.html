@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photo Shrinker — Gulo</title>
+  <meta name="description" content="Shrink a photo so it uploads to the Gulo editor without errors." />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Bitter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="index.html"><img class="nav__lockup" src="assets/logo-lockup.png" alt="Gulo" /></a>
+      <button class="nav__toggle" aria-label="Menu">&#9776;</button>
+      <nav>
+        <ul class="nav__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="adventures.html">Adventures</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="catches.html">Catch Log</a></li>
+          <li><a href="catchdex.html">Catch Dex</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="pagehead">
+    <div class="container">
+      <p class="eyebrow">Before you upload</p>
+      <h1>Photo Shrinker</h1>
+      <p>Phone photos are too big for the editor and cause an error. Shrink one here first, save it, then upload the shrunk copy in the editor.</p>
+    </div>
+  </section>
+
+  <section class="section container" style="max-width:720px;">
+    <label class="btn btn--primary" for="pick" style="cursor:pointer;">📷 Choose a photo</label>
+    <input id="pick" type="file" accept="image/*" style="display:none;" />
+
+    <div id="status" style="margin-top:18px; color:var(--stone);">Pick a photo to get started.</div>
+
+    <div id="result" style="display:none; margin-top:24px;">
+      <img id="preview" alt="Shrunk photo preview" style="width:100%; border-radius:10px; border:1px solid var(--sand); box-shadow:var(--shadow);" />
+      <p id="sizes" style="margin-top:12px; font-weight:600;"></p>
+      <a id="download" class="btn btn--primary" download="gulo-photo.jpg">⬇️ Save shrunk photo</a>
+      <p class="lead" style="margin-top:18px; font-size:0.95rem;">
+        <b>On iPhone:</b> if the Save button just opens the image, press and hold it and choose <b>Save to Photos</b> instead.<br>
+        <b>Then:</b> go to the editor (app.pagescms.org) and upload this saved copy.
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__brand">GULO</div>
+      <p>Made by two friends who'd rather be outside.</p>
+      <small>&copy; <span data-year></span> Haiden &amp; Mario</small>
+    </div>
+  </footer>
+
+  <script>
+    const MAX_DIM = 1600;      // longest side, in pixels
+    const QUALITY = 0.8;       // JPEG quality
+    const pick = document.getElementById("pick");
+    const statusEl = document.getElementById("status");
+    const result = document.getElementById("result");
+    const preview = document.getElementById("preview");
+    const sizes = document.getElementById("sizes");
+    const download = document.getElementById("download");
+
+    const kb = (bytes) => (bytes / 1024).toFixed(0) + " KB";
+    const mb = (bytes) => (bytes / 1048576).toFixed(1) + " MB";
+    const fmt = (bytes) => bytes >= 1048576 ? mb(bytes) : kb(bytes);
+
+    pick.addEventListener("change", () => {
+      const file = pick.files && pick.files[0];
+      if (!file) return;
+      statusEl.textContent = "Shrinking…";
+      const img = new Image();
+      const reader = new FileReader();
+      reader.onload = (e) => { img.src = e.target.result; };
+      reader.readAsDataURL(file);
+      img.onload = () => {
+        let { width, height } = img;
+        const scale = Math.min(1, MAX_DIM / Math.max(width, height));
+        width = Math.round(width * scale);
+        height = Math.round(height * scale);
+        const canvas = document.createElement("canvas");
+        canvas.width = width; canvas.height = height;
+        canvas.getContext("2d").drawImage(img, 0, 0, width, height);
+        canvas.toBlob((blob) => {
+          const url = URL.createObjectURL(blob);
+          preview.src = url;
+          download.href = url;
+          sizes.textContent = `Original: ${fmt(file.size)}  →  Shrunk: ${fmt(blob.size)}`;
+          statusEl.textContent = "Done! Save the photo below, then upload it in the editor.";
+          result.style.display = "block";
+        }, "image/jpeg", QUALITY);
+      };
+      img.onerror = () => { statusEl.textContent = "Couldn't read that image — try another."; };
+    });
+
+    document.querySelectorAll("[data-year]").forEach((el) => el.textContent = new Date().getFullYear());
+  </script>
+</body>
+</html>
