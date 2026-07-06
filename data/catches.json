@@ -1,3 +1,40 @@
 {
-  "catches": []
+  "catches": [
+    {
+      "species": "Rainbow Trout",
+      "angler": "Haiden",
+      "location": "Strawberry",
+      "bait": "Powerbait"
+    },
+    {
+      "species": "Tiger Trout",
+      "angler": "Haiden",
+      "location": "Salem Pond",
+      "bait": "Worm"
+    },
+    {
+      "species": "White Bass",
+      "angler": "Haiden",
+      "location": "Utah Lake",
+      "bait": "Spinner"
+    },
+    {
+      "species": "Largemouth Bass",
+      "angler": "Haiden",
+      "location": "Utah Lake",
+      "size": "Crank Bait"
+    },
+    {
+      "species": "Black Bullhead Catfish",
+      "angler": "Haiden",
+      "location": "Utah Lake",
+      "bait": "Shrimp"
+    },
+    {
+      "species": "Common Carp",
+      "angler": "Haiden",
+      "location": "Utah Lake",
+      "bait": "Shrimp"
+    }
+  ]
 }
