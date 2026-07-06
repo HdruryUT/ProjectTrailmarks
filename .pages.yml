@@ -37,3 +37,77 @@ content:
           - { name: by, label: Caught by, type: string }
           - { name: date, label: Date caught, type: string }
           - { name: photo, label: Catch photo, type: image }
+
+  - name: catchlog
+    label: Catch Log — individual catches
+    type: file
+    path: data/catches.json
+    fields:
+      - name: catches
+        label: Catches
+        type: object
+        list: true
+        fields:
+          - name: species
+            label: Fish species
+            type: select
+            options:
+              values:
+                - "Bonneville Cutthroat"
+                - "Bear Lake Cutthroat"
+                - "Colorado Cutthroat"
+                - "Yellowstone Cutthroat"
+                - "Rainbow Trout"
+                - "Brook Trout"
+                - "Tiger Trout"
+                - "Splake"
+                - "Lake Trout"
+                - "Brown Trout"
+                - "Arctic Grayling"
+                - "Mountain Whitefish"
+                - "Bonneville Whitefish"
+                - "Kokanee Salmon"
+                - "Golden Trout"
+                - "Largemouth Bass"
+                - "Smallmouth Bass"
+                - "Wiper"
+                - "Striped Bass"
+                - "White Bass"
+                - "Northern Pike"
+                - "Tiger Muskie"
+                - "Yellow Perch"
+                - "Walleye"
+                - "Bluegill"
+                - "Green Sunfish"
+                - "Black Crappie"
+                - "White Crappie"
+                - "Channel Catfish"
+                - "Black Bullhead Catfish"
+                - "Bluehead Sucker"
+                - "Flannelmouth Sucker"
+                - "June Sucker"
+                - "Razorback Sucker"
+                - "Roundtail Chub"
+                - "Humpback Chub"
+                - "Bonytail Chub"
+                - "Common Carp"
+                - "Redside Shiner"
+                - "Speckled Dace"
+                - "Western Mosquitofish"
+                - "Bonneville Cisco"
+                - "Mottled Sculpin"
+                - "Bear Lake Sculpin"
+                - "Burbot"
+          - name: angler
+            label: Caught by
+            type: select
+            options:
+              values:
+                - Haiden
+                - Mario
+          - { name: location, label: Location, type: string }
+          - { name: size, label: Size, type: string }
+          - { name: bait, label: "Bait / Lure", type: string }
+          - { name: conditions, label: Conditions, type: string }
+          - { name: date, label: Date, type: string }
+          - { name: photo, label: Photo, type: image }

@@ -100,6 +100,7 @@ img { max-width: 100%; display: block; }
 .nav__brand {
   color: var(--sand); text-decoration: none;
   font-size: 1.4rem; letter-spacing: 2px;
+  margin: 0;
   display: flex; align-items: center; gap: 10px;
 }
 .nav__logo { height: 42px; width: auto; display: block; }
@@ -240,6 +241,7 @@ img { max-width: 100%; display: block; }
 .catch__row:last-child { border-bottom: 0; }
 .catch__row span:first-child { color: var(--stone); }
 .badge-angler { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; padding: 2px 8px; border-radius: 12px; background: var(--sand); color: var(--bark); }
+.catch__photo { width: 100%; max-height: 260px; object-fit: contain; background: #efeadd; border-radius: 8px; margin-bottom: 12px; border: 1px solid var(--sand); }
 
 /* ---------- Placeholder look for missing images ---------- */
 .ph {
@@ -296,8 +298,8 @@ img { max-width: 100%; display: block; }
 .poster-link__txt b { font-family: var(--font-display); color: var(--forest); letter-spacing: 0.5px; display: block; font-size: 1.05rem; }
 .poster-link__txt span { font-size: 0.85rem; color: var(--stone); }
 
-/* Caught-fish photo in a dex slot */
-.dex-card__photo { width: 100%; height: 88px; object-fit: cover; border-radius: 6px; margin: 2px 0 8px; border: 1px solid var(--moss); }
+/* Caught-fish photo in a dex slot — show the whole photo, no cropping */
+.dex-card__photo { width: 100%; height: 130px; object-fit: contain; background: #efeadd; border-radius: 6px; margin: 2px 0 8px; border: 1px solid var(--moss); }
 
 .dex-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
 .dex-card {

@@ -70,12 +70,9 @@
       <button class="active" data-filter="all">All Catches</button>
       <button data-filter="Haiden">Haiden</button>
       <button data-filter="Mario">Mario</button>
-      <button data-filter="trout">Trout</button>
     </div>
 
-    <div class="catch-grid">
-      <p class="lead" style="grid-column:1/-1; text-align:center; color:var(--stone); padding:24px 0;">No catches logged yet — add your first and it'll show up here.</p>
-    </div>
+    <div class="catch-grid" id="catchGrid"></div>
   </section>
 
   <footer class="footer">
@@ -138,6 +135,47 @@
 
       sel.addEventListener("change", () => load(SPOTS[sel.value]));
       load(SPOTS[0]);
+    })();
+  </script>
+  <!-- Render the Catch Log from data/catches.json (edited via Pages CMS) -->
+  <script>
+    (async function catchLog() {
+      const grid = document.getElementById("catchGrid");
+      if (!grid) return;
+      let catches = [];
+      try {
+        const r = await fetch("data/catches.json", { cache: "no-store" });
+        if (r.ok) { const j = await r.json(); if (Array.isArray(j.catches)) catches = j.catches; }
+      } catch (e) { /* none yet */ }
+
+      const row = (label, val) => val
+        ? `<div class="catch__row"><span>${label}</span><span>${val}</span></div>` : "";
+
+      if (!catches.length) {
+        grid.innerHTML = `<p class="lead" style="grid-column:1/-1; text-align:center; color:var(--stone); padding:24px 0;">No catches logged yet — add yours from the editor and it'll show up here.</p>`;
+      } else {
+        grid.innerHTML = catches.map(c => `
+          <div class="catch" data-angler="${c.angler || ""}">
+            ${c.photo ? `<img class="catch__photo" src="${c.photo}" alt="${c.species || "catch"}">` : ""}
+            <div class="catch__species">${c.species || "Fish"}</div>
+            <span class="badge-angler">Caught by ${c.angler || "—"}</span>
+            <div style="margin-top:12px;">
+              ${row("Location", c.location)}
+              ${row("Size", c.size)}
+              ${row("Bait / Lure", c.bait)}
+              ${row("Conditions", c.conditions)}
+              ${row("Date", c.date)}
+            </div>
+          </div>`).join("");
+      }
+
+      // scoreboard tally by angler
+      const counts = {};
+      catches.forEach(c => { if (c.angler) counts[c.angler] = (counts[c.angler] || 0) + 1; });
+      document.querySelectorAll(".scoreboard [data-score]").forEach(el => {
+        const k = el.dataset.score;
+        el.textContent = k === "total" ? catches.length : (counts[k] || 0);
+      });
     })();
   </script>
   <script src="script.js"></script>
