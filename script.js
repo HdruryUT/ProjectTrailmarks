@@ -95,6 +95,25 @@ document.addEventListener("click", (e) => {
   }
 })();
 
+// Dark mode toggle (sun/moon in the header)
+(function theme() {
+  const btn = document.getElementById("themeToggle");
+  if (!btn) return;
+  const paint = () => {
+    const dark = document.documentElement.getAttribute("data-theme") === "dark";
+    btn.textContent = dark ? "☀️" : "🌙";
+    btn.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+  };
+  paint();
+  btn.addEventListener("click", () => {
+    const dark = document.documentElement.getAttribute("data-theme") === "dark";
+    if (dark) document.documentElement.removeAttribute("data-theme");
+    else document.documentElement.setAttribute("data-theme", "dark");
+    try { localStorage.setItem("gulo-theme", dark ? "light" : "dark"); } catch (e) {}
+    paint();
+  });
+})();
+
 // Footer year
 document.querySelectorAll("[data-year]").forEach((el) => {
   el.textContent = new Date().getFullYear();

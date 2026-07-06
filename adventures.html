@@ -19,22 +19,26 @@
   <!-- Leaflet map (free, OpenStreetMap) -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="styles.css" />
+  <script>(function(){try{if(localStorage.getItem('gulo-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
 </head>
 <body>
 
   <header class="nav">
     <div class="container nav__inner">
+      <div class="nav__group">
+        <button class="nav__toggle" aria-label="Menu">&#9776;</button>
+        <nav>
+          <ul class="nav__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="adventures.html">Adventures</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="catches.html">Catch Log</a></li>
+            <li><a href="catchdex.html">Catch Dex</a></li>
+          </ul>
+        </nav>
+      </div>
       <a class="nav__brand" href="index.html"><img class="nav__lockup" src="assets/logo-lockup.png" alt="Gulo" /></a>
-      <button class="nav__toggle" aria-label="Menu">&#9776;</button>
-      <nav>
-        <ul class="nav__links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="adventures.html">Adventures</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="catches.html">Catch Log</a></li>
-          <li><a href="catchdex.html">Catch Dex</a></li>
-        </ul>
-      </nav>
+      <button class="nav__theme" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
     </div>
   </header>
 

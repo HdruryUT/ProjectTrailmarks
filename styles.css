@@ -14,6 +14,10 @@
   --paper:       #f4efe4;   /* off-white background */
   --stone:       #8a8577;   /* muted stone gray */
   --ink:         #26211a;   /* near-black text */
+  --surface:     #ffffff;   /* cards */
+  --surface-2:   #efeadd;   /* muted/locked surfaces */
+  --border:      #e7ddc9;   /* card borders (= sand) */
+  --heading:     #2f4030;   /* headings/values on cards (= forest) */
 
   --shadow: 0 6px 20px rgba(31, 43, 32, 0.18);
   --radius: 10px;
@@ -66,7 +70,7 @@ img { max-width: 100%; display: block; }
   margin-bottom: 8px;
 }
 
-.lead { font-size: 1.15rem; color: #3d372c; max-width: 60ch; }
+.lead { font-size: 1.15rem; color: var(--ink); max-width: 60ch; }
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -94,13 +98,18 @@ img { max-width: 100%; display: block; }
   border-bottom: 3px solid var(--clay);
 }
 .nav__inner {
-  display: flex; align-items: center; justify-content: space-between;
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
   height: 64px;
+}
+.nav__group { justify-self: start; display: flex; align-items: center; gap: 10px; }
+.nav__theme {
+  justify-self: end; background: none; border: 0; color: var(--sand);
+  font-size: 1.5rem; line-height: 1; cursor: pointer; padding: 4px;
 }
 .nav__brand {
   color: var(--sand); text-decoration: none;
   font-size: 1.4rem; letter-spacing: 2px;
-  margin: 0;
+  margin: 0; justify-self: center;
   display: flex; align-items: center; gap: 10px;
 }
 .nav__logo { height: 42px; width: auto; display: block; }
@@ -145,8 +154,8 @@ img { max-width: 100%; display: block; }
 .grid--2 { grid-template-columns: repeat(2, 1fr); }
 
 .card {
-  background: #fff;
-  border: 1px solid var(--sand);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -227,21 +236,21 @@ img { max-width: 100%; display: block; }
 .filters button {
   font-family: var(--font-display); text-transform: uppercase; letter-spacing: 1px;
   font-size: 0.8rem; padding: 8px 16px; border-radius: 20px;
-  border: 2px solid var(--moss); background: #fff; color: var(--forest); cursor: pointer;
+  border: 2px solid var(--moss); background: var(--surface); color: var(--heading); cursor: pointer;
 }
 .filters button.active { background: var(--moss); color: #fff; }
 
 .catch-grid { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); }
 .catch {
-  background: #fff; border: 1px solid var(--sand); border-radius: var(--radius);
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
   padding: 18px 20px; box-shadow: var(--shadow);
 }
-.catch__species { font-family: var(--font-display); font-size: 1.3rem; color: var(--forest); }
+.catch__species { font-family: var(--font-display); font-size: 1.3rem; color: var(--heading); }
 .catch__row { display: flex; justify-content: space-between; font-size: 0.9rem; padding: 4px 0; border-bottom: 1px dashed var(--sand); }
 .catch__row:last-child { border-bottom: 0; }
 .catch__row span:first-child { color: var(--stone); }
 .badge-angler { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; padding: 2px 8px; border-radius: 12px; background: var(--sand); color: var(--bark); }
-.catch__photo { width: 100%; max-height: 260px; object-fit: contain; background: #efeadd; border-radius: 8px; margin-bottom: 12px; border: 1px solid var(--sand); }
+.catch__photo { width: 100%; max-height: 260px; object-fit: contain; background: var(--surface-2); border-radius: 8px; margin-bottom: 12px; border: 1px solid var(--border); }
 
 /* ---------- Placeholder look for missing images ---------- */
 .ph {
@@ -269,7 +278,7 @@ img { max-width: 100%; display: block; }
 .dex-tab {
   flex: 1; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 1px;
   font-size: 0.95rem; padding: 12px 14px; border-radius: var(--radius);
-  border: 2px solid var(--forest); background: #fff; color: var(--forest); cursor: pointer;
+  border: 2px solid var(--forest); background: var(--surface); color: var(--heading); cursor: pointer;
   transition: background .15s ease, color .15s ease;
 }
 .dex-tab:hover { background: var(--sand); }
@@ -300,29 +309,29 @@ img { max-width: 100%; display: block; }
 /* Poster reference link */
 .poster-link {
   display: flex; align-items: center; gap: 16px; text-decoration: none;
-  background: #fff; border: 1px solid var(--sand); border-radius: var(--radius);
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
   padding: 12px 16px; box-shadow: var(--shadow); margin-bottom: 8px; color: var(--ink);
   transition: transform .12s ease;
 }
 .poster-link:hover { transform: translateY(-2px); }
-.poster-link img { width: 60px; height: 78px; object-fit: cover; border-radius: 6px; border: 1px solid var(--sand); }
-.poster-link__txt b { font-family: var(--font-display); color: var(--forest); letter-spacing: 0.5px; display: block; font-size: 1.05rem; }
+.poster-link img { width: 60px; height: 78px; object-fit: cover; border-radius: 6px; border: 1px solid var(--border); }
+.poster-link__txt b { font-family: var(--font-display); color: var(--heading); letter-spacing: 0.5px; display: block; font-size: 1.05rem; }
 .poster-link__txt span { font-size: 0.85rem; color: var(--stone); }
 
 /* Caught-fish photo in a dex slot — show the whole photo, no cropping */
-.dex-card__photo { width: 100%; height: 130px; object-fit: contain; background: #efeadd; border-radius: 6px; margin: 2px 0 8px; border: 1px solid var(--moss); }
+.dex-card__photo { width: 100%; height: 130px; object-fit: contain; background: var(--surface-2); border-radius: 6px; margin: 2px 0 8px; border: 1px solid var(--moss); }
 
 .dex-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
 .dex-card {
-  position: relative; background: #fff; border: 1px solid var(--sand);
+  position: relative; background: var(--surface); border: 1px solid var(--border);
   border-radius: var(--radius); padding: 14px 14px 16px; text-align: center;
   box-shadow: var(--shadow); overflow: hidden;
 }
 .dex-card__fish { width: 82px; height: 44px; margin: 4px auto 8px; }
 .dex-card__fish svg { width: 100%; height: 100%; }
-.dex-card__name { font-family: var(--font-display); font-size: 1rem; line-height: 1.1; color: var(--forest); }
+.dex-card__name { font-family: var(--font-display); font-size: 1rem; line-height: 1.1; color: var(--heading); }
 .dex-card__sci { font-style: italic; font-size: 0.72rem; color: var(--stone); margin: 2px 0 4px; }
-.dex-card__where { font-size: 0.72rem; color: #6a6355; line-height: 1.3; }
+.dex-card__where { font-size: 0.72rem; color: var(--stone); line-height: 1.3; }
 .dex-card__stamp {
   position: absolute; top: 10px; right: 10px; font-family: var(--font-display);
   font-size: 0.62rem; letter-spacing: 1px; text-transform: uppercase;
@@ -331,7 +340,7 @@ img { max-width: 100%; display: block; }
 .dex-card--caught { border-color: var(--moss); }
 .dex-card--caught .dex-card__fish { color: var(--moss); }
 .dex-card--caught .dex-card__stamp { background: var(--moss); color: #fff; }
-.dex-card--locked { background: #efeadd; }
+.dex-card--locked { background: var(--surface-2); }
 .dex-card--locked .dex-card__fish { color: #c3bdae; filter: grayscale(1); }
 .dex-card--locked .dex-card__name,
 .dex-card--locked .dex-card__sci,
@@ -348,12 +357,12 @@ img { max-width: 100%; display: block; }
 .standings__champ b { color: #fff; font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 1px; }
 .standings__row {
   display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px;
-  background: #fff; border: 1px solid var(--sand); border-radius: var(--radius); padding: 14px 18px; box-shadow: var(--shadow);
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 18px; box-shadow: var(--shadow);
 }
 .standings__cat { text-align: center; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 1px; font-size: 0.78rem; color: var(--stone); }
 .standings__side { display: flex; align-items: center; gap: 10px; }
 .standings__side--r { justify-content: flex-end; }
-.standings__val { font-family: var(--font-display); font-size: 1.5rem; color: var(--forest); }
+.standings__val { font-family: var(--font-display); font-size: 1.5rem; color: var(--heading); }
 .standings__name { font-size: 0.9rem; color: var(--stone); }
 .standings__side.win .standings__val { color: var(--clay); }
 .standings__side.win .standings__name::after { content: " 👑"; }
@@ -361,13 +370,13 @@ img { max-width: 100%; display: block; }
 /* ---------- Trophy case ---------- */
 .trophies { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 24px; }
 .trophy {
-  background: #fff; border: 1px solid var(--sand); border-radius: var(--radius);
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
   padding: 20px 14px; text-align: center; box-shadow: var(--shadow);
 }
 .trophy__icon { font-size: 2.4rem; line-height: 1; }
-.trophy__name { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 1px; font-size: 0.82rem; margin-top: 8px; color: var(--forest); }
+.trophy__name { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 1px; font-size: 0.82rem; margin-top: 8px; color: var(--heading); }
 .trophy__desc { font-size: 0.76rem; color: var(--stone); margin-top: 4px; }
-.trophy--locked { background: #efeadd; }
+.trophy--locked { background: var(--surface-2); }
 .trophy--locked .trophy__icon { filter: grayscale(1); opacity: 0.4; }
 .trophy--locked .trophy__name { color: #b0a996; }
 
@@ -386,7 +395,7 @@ img { max-width: 100%; display: block; }
 .weather-head h2 { margin: 0; }
 .spot-select {
   font-family: var(--font-display); font-size: 0.95rem; letter-spacing: 0.5px;
-  color: var(--forest); background: #fff; border: 2px solid var(--moss);
+  color: var(--heading); background: var(--surface); border: 2px solid var(--moss);
   border-radius: 8px; padding: 8px 14px; cursor: pointer;
 }
 .spot-select:focus { outline: 2px solid var(--clay); }
@@ -409,4 +418,15 @@ img { max-width: 100%; display: block; }
   .stats { grid-template-columns: 1fr 1fr; }
   .dex-grid, .trophies { grid-template-columns: 1fr 1fr; }
   .standings__row { grid-template-columns: 1fr auto 1fr; }
+}
+
+/* ---------- Dark mode ---------- */
+[data-theme="dark"] {
+  --paper:      #14180f;   /* dark page background */
+  --ink:        #eae3d2;   /* light body text */
+  --stone:      #9aa08c;   /* muted text (lighter) */
+  --surface:    #232a1c;   /* cards */
+  --surface-2:  #1b2116;   /* muted/locked surfaces */
+  --border:     #38442c;   /* card borders */
+  --heading:    #eae3d2;   /* headings/values light on dark cards */
 }
